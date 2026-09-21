@@ -10,20 +10,18 @@ export function Recruit() {
   return (
     <section id="recruit">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 md:py-28 lg:px-10">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12">
-          <Reveal delay={0.1}>
-            <div className="relative aspect-4/5 w-full overflow-hidden rounded-sm md:aspect-auto md:h-120">
-              <Image
-                src={unsplash(RECRUIT_IMAGE_ID, 900, 1100)}
-                alt="真剣にお客様の髪と向き合うスタイリスト"
-                fill
-                sizes="(min-width: 768px) 45vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
+        <Reveal className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12">
+          <div className="relative aspect-4/5 w-full overflow-hidden rounded-sm md:aspect-auto md:h-120">
+            <Image
+              src={unsplash(RECRUIT_IMAGE_ID, 900, 1100)}
+              alt="真剣にお客様の髪と向き合うスタイリスト"
+              fill
+              sizes="(min-width: 768px) 45vw, 100vw"
+              className="object-cover"
+            />
+          </div>
 
-          <Reveal>
+          <div>
             <span className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-accent">
               Recruit
             </span>
@@ -44,8 +42,8 @@ export function Recruit() {
                 <ArrowUpRight size={14} weight="bold" />
               </span>
             </Link>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

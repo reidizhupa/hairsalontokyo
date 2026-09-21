@@ -23,8 +23,8 @@ export function About() {
             id="about"
             className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 md:py-28 lg:px-10"
         >
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12">
-                <Reveal>
+            <Reveal className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12">
+                <div>
                     <span className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-accent">
                         About
                     </span>
@@ -39,40 +39,38 @@ export function About() {
                         <br />
                         同じ担当者が、最後まで。
                     </h2>
-                </Reveal>
+                </div>
 
-                <Reveal delay={0.1}>
-                    <div className="mx-auto grid max-w-150 grid-cols-2 gap-3 sm:gap-4 md:mx-0 md:ml-auto md:grid-cols-[3fr_2fr]">
-                        <div className="relative col-span-2 aspect-square overflow-hidden rounded-sm md:col-span-1 md:aspect-auto md:row-span-2">
-                            <Image
-                                src={unsplash(GALLERY[0].id, 800, 1000)}
-                                alt={GALLERY[0].alt}
-                                fill
-                                sizes="(min-width: 768px) 22vw, 45vw"
-                                className="object-cover"
-                            />
-                        </div>
-                        <div className="relative aspect-square overflow-hidden rounded-sm">
-                            <Image
-                                src={unsplash(GALLERY[1].id, 600, 600)}
-                                alt={GALLERY[1].alt}
-                                fill
-                                sizes="(min-width: 768px) 10vw, 15vw"
-                                className="object-cover"
-                            />
-                        </div>
-                        <div className="relative aspect-square overflow-hidden rounded-sm">
-                            <Image
-                                src={unsplash(GALLERY[2].id, 600, 600)}
-                                alt={GALLERY[2].alt}
-                                fill
-                                sizes="(min-width: 768px) 10vw, 15vw"
-                                className="object-cover"
-                            />
-                        </div>
+                <div className="mx-auto grid max-w-150 grid-cols-2 gap-3 sm:gap-4 md:mx-0 md:ml-auto md:grid-cols-[3fr_2fr]">
+                    <div className="relative col-span-2 aspect-square overflow-hidden rounded-sm md:col-span-1 md:aspect-auto md:row-span-2">
+                        <Image
+                            src={unsplash(GALLERY[0].id, 800, 1000)}
+                            alt={GALLERY[0].alt}
+                            fill
+                            sizes="(min-width: 768px) 22vw, 45vw"
+                            className="object-cover"
+                        />
                     </div>
-                </Reveal>
-            </div>
+                    <div className="relative aspect-square overflow-hidden rounded-sm">
+                        <Image
+                            src={unsplash(GALLERY[1].id, 600, 600)}
+                            alt={GALLERY[1].alt}
+                            fill
+                            sizes="(min-width: 768px) 10vw, 15vw"
+                            className="object-cover"
+                        />
+                    </div>
+                    <div className="relative aspect-square overflow-hidden rounded-sm">
+                        <Image
+                            src={unsplash(GALLERY[2].id, 600, 600)}
+                            alt={GALLERY[2].alt}
+                            fill
+                            sizes="(min-width: 768px) 10vw, 15vw"
+                            className="object-cover"
+                        />
+                    </div>
+                </div>
+            </Reveal>
         </section>
     );
 }

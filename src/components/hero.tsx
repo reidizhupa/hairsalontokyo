@@ -32,7 +32,7 @@ export function Hero() {
                     sizes="100vw"
                     className="object-cover object-[55%_20%]"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-accent-soft/70 from-15% via-accent-soft/20 via-45% to-transparent to-85%" />
+                <div className="absolute inset-0 bg-linear-to-t from-accent-soft/70 from-15% via-accent-soft/80 md:via-accent-soft/20 via-45% to-transparent to-85%" />
             </div>
 
             <motion.div

@@ -45,11 +45,8 @@ export function Services() {
                     </h2>
                 </Reveal>
 
-                <div className="mt-10 grid grid-cols-1 gap-3 sm:mt-12 sm:gap-4 md:grid-cols-4 md:grid-rows-2">
-                    <Reveal
-                        delay={0.05}
-                        className="md:col-span-2 md:row-span-2"
-                    >
+                <Reveal className="mt-10 grid grid-cols-1 gap-3 sm:mt-12 sm:gap-4 md:grid-cols-4 md:grid-rows-2">
+                    <div className="md:col-span-2 md:row-span-2">
                         <div className="relative h-full min-h-64 overflow-hidden rounded-sm sm:min-h-80">
                             <Image
                                 src={unsplash(
@@ -72,14 +69,10 @@ export function Services() {
                                 </p>
                             </div>
                         </div>
-                    </Reveal>
+                    </div>
 
-                    {SUPPORTING.map((item, i) => (
-                        <Reveal
-                            key={item.title}
-                            delay={0.1 + i * 0.05}
-                            className="md:col-span-1"
-                        >
+                    {SUPPORTING.map((item) => (
+                        <div key={item.title} className="md:col-span-1">
                             <div className="flex h-full flex-col justify-between rounded-sm border border-line bg-surface p-5 sm:p-7">
                                 <item.icon
                                     size={22}
@@ -95,9 +88,9 @@ export function Services() {
                                     </p>
                                 </div>
                             </div>
-                        </Reveal>
+                        </div>
                     ))}
-                </div>
+                </Reveal>
             </div>
         </section>
     );

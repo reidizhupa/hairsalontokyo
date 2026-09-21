@@ -23,21 +23,19 @@ export function Gallery() {
         </h2>
       </Reveal>
 
-      <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 md:grid-cols-3">
-        {SHOTS.map((id, i) => (
-          <Reveal key={id} delay={i * 0.04}>
-            <div className="relative aspect-square overflow-hidden rounded-sm">
-              <Image
-                src={unsplash(id, 700, 700)}
-                alt="サロンでの施術の様子"
-                fill
-                sizes="(min-width: 768px) 32vw, 48vw"
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
+      <Reveal className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 md:grid-cols-3">
+        {SHOTS.map((id) => (
+          <div key={id} className="relative aspect-square overflow-hidden rounded-sm">
+            <Image
+              src={unsplash(id, 700, 700)}
+              alt="サロンでの施術の様子"
+              fill
+              sizes="(min-width: 768px) 32vw, 48vw"
+              className="object-cover"
+            />
+          </div>
         ))}
-      </div>
+      </Reveal>
     </section>
   );
 }

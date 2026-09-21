@@ -22,9 +22,9 @@ export function Stylists() {
           </h2>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-4">
-          {STYLISTS.map((person, i) => (
-            <Reveal key={person.name} delay={i * 0.05}>
+        <Reveal className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-4">
+          {STYLISTS.map((person) => (
+            <div key={person.name}>
               <div className="relative aspect-square w-full overflow-hidden rounded-sm">
                 <Image
                   src={unsplash(person.id, 500, 500)}
@@ -38,9 +38,9 @@ export function Stylists() {
                 {person.name}
               </h3>
               <p className="text-sm text-foreground-muted">{person.role}</p>
-            </Reveal>
+            </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );
