@@ -1,15 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["trinity-gladly-footsie.ngrok-free.dev"],
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "picsum.photos",
-      },
-      {
-        protocol: "https",
-        hostname: "fastly.picsum.photos",
+        hostname: "images.unsplash.com",
       },
     ],
   },

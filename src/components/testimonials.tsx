@@ -3,39 +3,37 @@ import { Reveal } from "./reveal";
 
 const QUOTES = [
   {
-    quote:
-      "First salon where the cut still looked right eight weeks later, not just on the walk out.",
-    name: "Yui Tanaka",
-    role: "Regular guest, three years",
+    quote: "仕上がりが2ヶ月経っても崩れないサロンは初めてです。",
+    name: "田中 結衣",
+    role: "3年通っている常連",
   },
   {
-    quote:
-      "I stopped explaining what I wanted after the second visit. Mika just knows by now.",
-    name: "Haruto Ogawa",
-    role: "Regular guest",
+    quote: "説明しなくても、もう分かってもらえる安心感があります。",
+    name: "小川 陽翔",
+    role: "常連",
   },
   {
-    quote:
-      "The color held its tone through two full regrowth cycles with barely any fading.",
-    name: "Nanako Iwasaki",
-    role: "Regular guest, one year",
+    quote: "カラーの色持ちが良くて、褪色がほとんど気になりません。",
+    name: "岩崎 菜々子",
+    role: "通い始めて1年",
   },
 ];
 
 export function Testimonials() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20 md:py-28 lg:px-10">
+    <section className="bg-surface-sunken">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 md:py-28 lg:px-10">
       <Reveal className="max-w-xl">
         <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-          What guests come back for.
+          お客様の声。
         </h2>
       </Reveal>
 
-      <div className="mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 scrollbar-none [-ms-overflow-style:none] sm:mt-12">
         {QUOTES.map((item) => (
           <div
             key={item.name}
-            className="w-[85%] shrink-0 snap-start rounded-2xl border border-line bg-surface p-7 sm:w-[60%] lg:w-[32%]"
+            className="w-[82%] shrink-0 snap-start rounded-2xl border border-line bg-surface p-5 sm:w-[60%] sm:p-7 lg:w-[32%]"
           >
             <Quotes size={22} weight="fill" className="text-accent" />
             <p className="mt-4 text-base leading-relaxed text-foreground">
@@ -49,6 +47,7 @@ export function Testimonials() {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

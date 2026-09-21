@@ -1,28 +1,24 @@
 import Image from "next/image";
 import { Reveal } from "./reveal";
+import { unsplash } from "@/lib/unsplash";
 
 export function Philosophy() {
   return (
-    <section id="studio" className="mx-auto max-w-7xl px-6 py-20 md:py-28 lg:px-10">
+    <section id="studio" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 md:py-28 lg:px-10">
       <Reveal className="max-w-2xl">
-        <h2 className="text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl">
-          We run one chair at a time, so nothing about your visit feels
-          rushed.
+        <h2 className="text-2xl font-semibold leading-snug tracking-tight text-foreground sm:text-3xl md:text-4xl md:leading-tight">
+          一日一人。だから、慌ただしさがありません。
         </h2>
-        <p className="mt-6 text-base leading-relaxed text-foreground-muted">
-          Kanzashi keeps a small, fixed roster of stylists and a booking
-          system that never double-books a chair. You get a full
-          consultation, a considered plan, and the same person each time you
-          come back. No trainees learning on your hair, no upsell script at
-          checkout.
+        <p className="mt-5 text-base leading-relaxed text-foreground-muted sm:mt-6">
+          少人数の固定スタイリストが、予約の重ならない仕組みで対応します。カウンセリングから仕上げまで、毎回同じ担当者です。研修中のスタッフが髪に触れることはありません。
         </p>
       </Reveal>
 
-      <Reveal delay={0.1} className="mt-12">
-        <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl">
+      <Reveal delay={0.1} className="mt-10 sm:mt-12">
+        <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl sm:aspect-21/9">
           <Image
-            src="https://picsum.photos/seed/kanzashi-interior/1600/700"
-            alt="Interior of the studio with natural light and minimal furnishing"
+            src={unsplash("1781450090585-1a511b7066d9", 1600, 700)}
+            alt="明るく落ち着いた店内、スタイリングチェアと鏡が並ぶ"
             fill
             sizes="100vw"
             className="object-cover"
