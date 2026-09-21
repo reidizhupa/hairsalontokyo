@@ -12,32 +12,29 @@ const STYLISTS = [
 export function Stylists() {
   return (
     <section id="stylists" className="bg-surface-sunken">
-      <div className="mx-auto max-w-7xl py-14 sm:py-20 md:py-28">
-        <div className="px-4 sm:px-6 lg:px-10">
-          <Reveal>
-            <h2 className="mt-5 max-w-xl font-serif text-3xl font-medium tracking-tight text-foreground md:text-4xl">
-              4名体制、変わらない仕上がり。
-            </h2>
-          </Reveal>
-        </div>
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 md:py-28 lg:px-10">
+        <Reveal>
+          <span className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-accent">
+            Staff
+          </span>
+          <h2 className="mt-5 max-w-xl font-serif text-base font-medium text-gray-500 leading-snug tracking-tight md:text-3xl">
+            経験を重ねた、専属スタイリストたち。
+          </h2>
+        </Reveal>
 
-        <div className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-hidden scroll-pl-4 px-4 pb-2 scrollbar-none [-ms-overflow-style:none] [touch-action:pan-x] sm:mt-12 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:scroll-pl-6 sm:px-6 lg:grid-cols-4 lg:scroll-pl-10 lg:px-10">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-4">
           {STYLISTS.map((person, i) => (
-            <Reveal
-              key={person.name}
-              delay={i * 0.05}
-              className="w-[60%] shrink-0 snap-start sm:w-auto"
-            >
-              <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
+            <Reveal key={person.name} delay={i * 0.05}>
+              <div className="relative aspect-square w-full overflow-hidden rounded-sm">
                 <Image
                   src={unsplash(person.id, 500, 500)}
                   alt={`${person.name}のポートレート`}
                   fill
-                  sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 42vw"
+                  sizes="(min-width: 1024px) 22vw, 45vw"
                   className="object-cover"
                 />
               </div>
-              <h3 className="mt-4 text-sm font-semibold text-foreground">
+              <h3 className="mt-4 text-sm font-medium text-gray-500">
                 {person.name}
               </h3>
               <p className="text-sm text-foreground-muted">{person.role}</p>

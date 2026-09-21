@@ -20,7 +20,6 @@ export default function Home() {
                 <Stylists />
                 <Recruit />
                 <Gallery />
-                <Testimonials />
                 <BookingCta />
             </main>
             <Footer />

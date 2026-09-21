@@ -37,6 +37,9 @@ export function Services() {
         <section id="services" className="bg-surface-sunken">
             <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 md:py-28 lg:px-10">
                 <Reveal>
+                    <span className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-accent">
+                        Menu
+                    </span>
                     <h2 className="mt-5 max-w-xl font-serif text-base font-medium text-gray-500 leading-snug tracking-tight md:text-3xl">
                         メニューは、あえて少なく。
                     </h2>

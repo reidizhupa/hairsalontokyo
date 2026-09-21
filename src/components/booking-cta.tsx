@@ -20,7 +20,10 @@ export function BookingCta() {
                 <Reveal>
                     <div className="flex flex-col gap-8 rounded-3xl sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-10 md:p-12">
                         <div className="sm:flex-1">
-                            <h2 className="max-w-md font-serif text-lg font-medium leading-snug tracking-tight text-foreground sm:text-2xl md:text-3xl">
+                            <span className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-accent">
+                                Contact
+                            </span>
+                            <h2 className="mt-5 max-w-md font-serif text-base font-medium leading-snug tracking-tight text-gray-500 md:text-3xl">
                                 空き枠には限りがあります。お早めにご予約を。
                             </h2>
                             <Link

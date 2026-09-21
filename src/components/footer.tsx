@@ -2,11 +2,11 @@ import Link from "next/link";
 import { InstagramLogo } from "@phosphor-icons/react/dist/ssr";
 
 const LINKS = [
-    { href: "#services", label: "メニュー" },
-    { href: "#about", label: "ABOUT" },
-    { href: "#stylists", label: "スタイリスト" },
-    { href: "#gallery", label: "ギャラリー" },
-    { href: "#recruit", label: "採用情報" },
+    { href: "#services", label: "Menu" },
+    { href: "#about", label: "About" },
+    { href: "#stylists", label: "Staff" },
+    { href: "#gallery", label: "Gallery" },
+    { href: "#recruit", label: "Recruit" },
 ];
 
 export function Footer() {

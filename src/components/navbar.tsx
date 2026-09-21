@@ -6,12 +6,12 @@ import { useMotionValueEvent, useScroll } from "motion/react";
 import { List, X } from "@phosphor-icons/react/dist/ssr";
 
 const LINKS = [
-    { href: "#services", label: "メニュー" },
-    { href: "#about", label: "ABOUT" },
-    { href: "#stylists", label: "スタイリスト" },
-    { href: "#gallery", label: "ギャラリー" },
-    { href: "#recruit", label: "採用情報" },
-    { href: "#contact", label: "アクセス" },
+    { href: "#services", label: "Menu" },
+    { href: "#about", label: "About" },
+    { href: "#stylists", label: "Staff" },
+    { href: "#gallery", label: "Gallery" },
+    { href: "#recruit", label: "Recruit" },
+    { href: "#contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -34,17 +34,17 @@ export function Navbar() {
             <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
                 <Link
                     href="#top"
-                    className="font-serif text-lg tracking-tight sm:text-xl"
+                    className="font-serif text-lg tracking-tight text-gray-500 sm:text-xl"
                 >
                     かんざし
                 </Link>
 
-                <nav className="hidden lg:flex items-center gap-8 text-sm text-foreground-muted">
+                <nav className="hidden lg:flex items-center gap-8 text-sm text-gray-500">
                     {LINKS.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
-                            className="transition-colors hover:text-foreground"
+                            className="transition-colors hover:text-accent"
                         >
                             {link.label}
                         </Link>
@@ -61,7 +61,7 @@ export function Navbar() {
                     <button
                         type="button"
                         onClick={() => setOpen((v) => !v)}
-                        className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-foreground"
+                        className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-gray-500"
                         aria-label="Toggle menu"
                     >
                         {open ? <X size={18} /> : <List size={18} />}
@@ -77,7 +77,7 @@ export function Navbar() {
                                 key={link.href}
                                 href={link.href}
                                 onClick={() => setOpen(false)}
-                                className="block py-2.5 text-foreground-muted transition-colors hover:text-foreground"
+                                className="block py-2.5 text-gray-500 transition-colors hover:text-accent"
                             >
                                 {link.label}
                             </Link>
