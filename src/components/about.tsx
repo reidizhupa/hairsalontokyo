@@ -41,33 +41,35 @@ export function About() {
                     </h2>
                 </div>
 
-                <div className="mx-auto grid max-w-150 grid-cols-2 gap-3 sm:gap-4 md:mx-0 md:ml-auto md:grid-cols-[3fr_2fr]">
-                    <div className="relative col-span-2 aspect-square overflow-hidden rounded-sm md:col-span-1 md:aspect-auto md:row-span-2">
-                        <Image
-                            src={unsplash(GALLERY[0].id, 800, 1000)}
-                            alt={GALLERY[0].alt}
-                            fill
-                            sizes="(min-width: 768px) 22vw, 45vw"
-                            className="object-cover"
-                        />
-                    </div>
-                    <div className="relative aspect-square overflow-hidden rounded-sm">
-                        <Image
-                            src={unsplash(GALLERY[1].id, 600, 600)}
-                            alt={GALLERY[1].alt}
-                            fill
-                            sizes="(min-width: 768px) 10vw, 15vw"
-                            className="object-cover"
-                        />
-                    </div>
-                    <div className="relative aspect-square overflow-hidden rounded-sm">
-                        <Image
-                            src={unsplash(GALLERY[2].id, 600, 600)}
-                            alt={GALLERY[2].alt}
-                            fill
-                            sizes="(min-width: 768px) 10vw, 15vw"
-                            className="object-cover"
-                        />
+                <div>
+                    <div className="mx-auto grid max-w-150 grid-cols-2 gap-3 sm:gap-4 md:mx-0 md:ml-auto md:grid-cols-[3fr_2fr]">
+                        <div className="relative col-span-2 aspect-square overflow-hidden rounded-sm md:col-span-1 md:aspect-auto md:row-span-2">
+                            <Image
+                                src={unsplash(GALLERY[0].id, 800, 1000)}
+                                alt={GALLERY[0].alt}
+                                fill
+                                sizes="(min-width: 768px) 22vw, 45vw"
+                                className="object-cover"
+                            />
+                        </div>
+                        <div className="relative aspect-square overflow-hidden rounded-sm">
+                            <Image
+                                src={unsplash(GALLERY[1].id, 600, 600)}
+                                alt={GALLERY[1].alt}
+                                fill
+                                sizes="(min-width: 768px) 10vw, 15vw"
+                                className="object-cover"
+                            />
+                        </div>
+                        <div className="relative aspect-square overflow-hidden rounded-sm">
+                            <Image
+                                src={unsplash(GALLERY[2].id, 600, 600)}
+                                alt={GALLERY[2].alt}
+                                fill
+                                sizes="(min-width: 768px) 10vw, 15vw"
+                                className="object-cover"
+                            />
+                        </div>
                     </div>
                 </div>
             </Reveal>
