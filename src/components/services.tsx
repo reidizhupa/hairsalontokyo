@@ -37,7 +37,7 @@ export function Services() {
         <section id="services" className="bg-surface-sunken">
             <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 md:py-28 lg:px-10">
                 <Reveal>
-                    <h2 className="mt-5 max-w-xl font-serif text-3xl font-medium tracking-tight text-foreground md:text-4xl">
+                    <h2 className="mt-5 max-w-xl font-serif text-base font-medium text-gray-500 leading-snug tracking-tight md:text-3xl">
                         メニューは、あえて少なく。
                     </h2>
                 </Reveal>
@@ -47,7 +47,7 @@ export function Services() {
                         delay={0.05}
                         className="md:col-span-2 md:row-span-2"
                     >
-                        <div className="relative h-full min-h-64 overflow-hidden rounded-3xl sm:min-h-80">
+                        <div className="relative h-full min-h-64 overflow-hidden rounded-sm sm:min-h-80">
                             <Image
                                 src={unsplash(
                                     "1647140655214-e4a2d914971f",
@@ -77,14 +77,14 @@ export function Services() {
                             delay={0.1 + i * 0.05}
                             className="md:col-span-1"
                         >
-                            <div className="flex h-full flex-col justify-between rounded-2xl border border-line bg-surface p-5 sm:p-7">
+                            <div className="flex h-full flex-col justify-between rounded-sm border border-line bg-surface p-5 sm:p-7">
                                 <item.icon
                                     size={22}
                                     weight="light"
                                     className="text-accent"
                                 />
                                 <div className="mt-6">
-                                    <h3 className="font-serif text-lg font-medium text-foreground">
+                                    <h3 className="font-serif text-lg font-medium text-gray-500">
                                         {item.title}
                                     </h3>
                                     <p className="mt-1.5 text-sm leading-relaxed text-foreground-muted">
