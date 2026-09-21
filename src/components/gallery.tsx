@@ -14,7 +14,7 @@ export function Gallery() {
   return (
     <section id="gallery" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 md:py-28 lg:px-10">
       <Reveal className="max-w-xl">
-        <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+        <h2 className="font-serif text-3xl font-medium tracking-tight text-foreground md:text-4xl">
           施術事例
         </h2>
       </Reveal>

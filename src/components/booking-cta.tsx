@@ -20,15 +20,15 @@ export function BookingCta() {
                 <Reveal>
                     <div className="flex flex-col gap-8 rounded-3xl sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-10 md:p-12">
                         <div className="sm:flex-1">
-                            <h2 className="max-w-md text-lg font-semibold leading-snug tracking-tight text-foreground sm:text-2xl md:text-3xl">
+                            <h2 className="max-w-md font-serif text-lg font-medium leading-snug tracking-tight text-foreground sm:text-2xl md:text-3xl">
                                 空き枠には限りがあります。お早めにご予約を。
                             </h2>
                             <Link
                                 href="https://wa.me/810312345678"
-                                className="group mt-6 inline-flex items-center gap-2 rounded-full bg-foreground py-3 pl-6 pr-3 text-sm font-medium text-surface transition-transform active:scale-[0.98]"
+                                className="group mt-6 inline-flex items-center gap-2 rounded-sm bg-accent py-3 pl-6 pr-3 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90"
                             >
                                 ご予約
-                                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-surface/15 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                                     <ArrowUpRight size={14} weight="bold" />
                                 </span>
                             </Link>

@@ -24,7 +24,7 @@ export function Testimonials() {
     <section className="bg-surface-sunken">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 md:py-28 lg:px-10">
       <Reveal className="max-w-xl">
-        <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+        <h2 className="font-serif text-3xl font-medium tracking-tight text-foreground md:text-4xl">
           お客様の声。
         </h2>
       </Reveal>
@@ -36,7 +36,7 @@ export function Testimonials() {
             className="w-[82%] shrink-0 snap-start rounded-2xl border border-line bg-surface p-5 sm:w-[60%] sm:p-7 lg:w-[32%]"
           >
             <Quotes size={22} weight="fill" className="text-accent" />
-            <p className="mt-4 text-base leading-relaxed text-foreground">
+            <p className="mt-4 font-serif text-lg leading-relaxed text-foreground">
               {item.quote}
             </p>
             <div className="mt-6">

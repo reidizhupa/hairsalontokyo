@@ -3,9 +3,10 @@ import { InstagramLogo } from "@phosphor-icons/react/dist/ssr";
 
 const LINKS = [
     { href: "#services", label: "メニュー" },
-    { href: "#studio", label: "店内" },
+    { href: "#about", label: "ABOUT" },
     { href: "#stylists", label: "スタイリスト" },
     { href: "#gallery", label: "ギャラリー" },
+    { href: "#recruit", label: "採用情報" },
 ];
 
 export function Footer() {
@@ -13,7 +14,7 @@ export function Footer() {
         <footer className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
             <div className="flex flex-col gap-8 border-t border-line pt-10 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                    <p className="text-lg font-semibold tracking-tight">
+                    <p className="font-serif text-lg font-medium tracking-tight">
                         かんざし
                     </p>
                     <p className="mt-2 max-w-xs text-sm text-foreground-muted">

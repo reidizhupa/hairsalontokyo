@@ -37,7 +37,7 @@ export function Services() {
         <section id="services" className="bg-surface-sunken">
             <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 md:py-28 lg:px-10">
                 <Reveal>
-                    <h2 className="mt-5 max-w-xl text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+                    <h2 className="mt-5 max-w-xl font-serif text-3xl font-medium tracking-tight text-foreground md:text-4xl">
                         メニューは、あえて少なく。
                     </h2>
                 </Reveal>
@@ -61,7 +61,7 @@ export function Services() {
                             />
                             <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
                             <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
-                                <h3 className="mt-3 text-xl font-semibold text-white">
+                                <h3 className="mt-3 font-serif text-xl font-medium text-white">
                                     カット
                                 </h3>
                                 <p className="mt-1.5 max-w-xs text-sm leading-relaxed text-white/80">
@@ -84,7 +84,7 @@ export function Services() {
                                     className="text-accent"
                                 />
                                 <div className="mt-6">
-                                    <h3 className="text-lg font-semibold text-foreground">
+                                    <h3 className="font-serif text-lg font-medium text-foreground">
                                         {item.title}
                                     </h3>
                                     <p className="mt-1.5 text-sm leading-relaxed text-foreground-muted">

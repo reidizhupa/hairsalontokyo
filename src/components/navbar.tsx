@@ -7,9 +7,10 @@ import { List, X } from "@phosphor-icons/react/dist/ssr";
 
 const LINKS = [
   { href: "#services", label: "メニュー" },
-  { href: "#studio", label: "店内" },
+  { href: "#about", label: "ABOUT" },
   { href: "#stylists", label: "スタイリスト" },
   { href: "#gallery", label: "ギャラリー" },
+  { href: "#recruit", label: "採用情報" },
   { href: "#contact", label: "アクセス" },
 ];
 
@@ -31,7 +32,7 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
-        <Link href="#top" className="text-base font-semibold tracking-tight sm:text-lg">
+        <Link href="#top" className="font-serif text-lg tracking-tight sm:text-xl">
           かんざし
         </Link>
 
@@ -50,7 +51,7 @@ export function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3">
           <Link
             href="#contact"
-            className="inline-flex items-center rounded-full bg-foreground px-4 py-2 text-sm font-medium text-surface transition-transform active:scale-[0.98] hover:opacity-90 sm:px-5 sm:py-2.5"
+            className="inline-flex items-center rounded-sm bg-accent px-4 py-2 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90 sm:px-5 sm:py-2.5"
           >
             ご予約
           </Link>
