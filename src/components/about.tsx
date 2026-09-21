@@ -28,7 +28,7 @@ export function About() {
                     <span className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-accent">
                         About
                     </span>
-                    <h2 className="mt-5 font-serif text-md md:text-3xl font-medium text-gray-500 leading-snug tracking-tight ">
+                    <h2 className="mt-5 font-serif text-md md:text-3xl font-thin text-gray-500 leading-snug tracking-tight ">
                         少人数制の、指名スタイリスト。
                         <br />
                         予約が重ならない仕組みだから、

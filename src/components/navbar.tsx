@@ -54,7 +54,7 @@ export function Navbar() {
                 <div className="flex items-center gap-2 sm:gap-3">
                     <Link
                         href="#contact"
-                        className="inline-flex items-center rounded-sm bg-accent px-4 py-2 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90 sm:px-5 sm:py-2.5"
+                        className="hidden items-center rounded-sm bg-accent px-4 py-2 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90 sm:px-5 sm:py-2.5 lg:inline-flex"
                     >
                         ご予約
                     </Link>
@@ -64,7 +64,7 @@ export function Navbar() {
                         className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-gray-500"
                         aria-label="Toggle menu"
                     >
-                        {open ? <X size={18} /> : <List size={18} />}
+                        {open ? <X size={23} /> : <List size={23} />}
                     </button>
                 </div>
             </div>
@@ -83,6 +83,13 @@ export function Navbar() {
                             </Link>
                         ))}
                     </nav>
+                    <Link
+                        href="#contact"
+                        onClick={() => setOpen(false)}
+                        className="mt-3 inline-flex w-full items-center justify-center rounded-sm bg-accent px-5 py-2.5 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90"
+                    >
+                        ご予約
+                    </Link>
                 </div>
             )}
         </header>

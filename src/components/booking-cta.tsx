@@ -23,7 +23,7 @@ export function BookingCta() {
                             <span className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-accent">
                                 Contact
                             </span>
-                            <h2 className="mt-5 max-w-md font-serif text-base font-medium leading-snug tracking-tight text-gray-500 md:text-3xl">
+                            <h2 className="mt-5 max-w-md font-serif text-base font-thin leading-snug tracking-tight text-gray-500 md:text-3xl">
                                 空き枠には限りがあります。お早めにご予約を。
                             </h2>
                             <Link

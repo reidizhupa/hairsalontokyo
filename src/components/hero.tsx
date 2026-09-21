@@ -21,7 +21,7 @@ export function Hero() {
     return (
         <section
             id="top"
-            className="relative flex min-h-[95dvh] flex-col justify-end overflow-hidden bg-background sm:min-h-screen"
+            className="relative flex min-h-[95dvh] md:min-h-[95dvh] flex-col justify-end overflow-hidden bg-background sm:min-h-screen"
         >
             <div className="absolute inset-0">
                 <Image

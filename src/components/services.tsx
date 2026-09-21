@@ -40,7 +40,7 @@ export function Services() {
                     <span className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-accent">
                         Menu
                     </span>
-                    <h2 className="mt-5 max-w-xl font-serif text-base font-medium text-gray-500 leading-snug tracking-tight md:text-3xl">
+                    <h2 className="mt-5 max-w-xl font-serif text-base font-thin text-gray-500 leading-snug tracking-tight md:text-3xl">
                         メニューは、あえて少なく。
                     </h2>
                 </Reveal>
