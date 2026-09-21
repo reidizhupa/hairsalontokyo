@@ -4,7 +4,7 @@ import { unsplash } from "@/lib/unsplash";
 
 const GALLERY = [
     {
-        id: "1781450090585-1a511b7066d9",
+        id: "1633681926022-84c23e8cb2d6",
         alt: "明るく落ち着いた店内、スタイリングチェアと鏡が並ぶ",
     },
     {
@@ -12,7 +12,7 @@ const GALLERY = [
         alt: "白を基調にした、静かな店内の一角",
     },
     {
-        id: "1786987942836-71e5a32dcfab",
+        id: "1633681926035-ec1ac984418a",
         alt: "使い込まれた鋏と道具たち",
     },
 ];
@@ -42,8 +42,8 @@ export function About() {
                 </Reveal>
 
                 <Reveal delay={0.1}>
-                    <div className="mx-auto grid max-w-150 grid-cols-[3fr_2fr] gap-3 sm:gap-4 md:mx-0 md:ml-auto">
-                        <div className="relative row-span-2 overflow-hidden rounded-3xl">
+                    <div className="mx-auto grid max-w-150 grid-cols-2 gap-3 sm:gap-4 md:mx-0 md:ml-auto md:grid-cols-[3fr_2fr]">
+                        <div className="relative col-span-2 aspect-square overflow-hidden rounded-sm md:col-span-1 md:aspect-auto md:row-span-2">
                             <Image
                                 src={unsplash(GALLERY[0].id, 800, 1000)}
                                 alt={GALLERY[0].alt}
@@ -52,7 +52,7 @@ export function About() {
                                 className="object-cover"
                             />
                         </div>
-                        <div className="relative aspect-square overflow-hidden rounded-2xl">
+                        <div className="relative aspect-square overflow-hidden rounded-sm">
                             <Image
                                 src={unsplash(GALLERY[1].id, 600, 600)}
                                 alt={GALLERY[1].alt}
@@ -61,7 +61,7 @@ export function About() {
                                 className="object-cover"
                             />
                         </div>
-                        <div className="relative aspect-square overflow-hidden rounded-2xl">
+                        <div className="relative aspect-square overflow-hidden rounded-sm">
                             <Image
                                 src={unsplash(GALLERY[2].id, 600, 600)}
                                 alt={GALLERY[2].alt}
