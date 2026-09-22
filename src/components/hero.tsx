@@ -12,6 +12,7 @@ import {
 import { Reveal } from "./reveal";
 
 const HERO_IMAGE_ALT = "やわらかな光の中でくつろぐ女性";
+const BOOKING_URL = "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000805576";
 
 export function Hero() {
     const reduce = useReducedMotion();
@@ -48,7 +49,9 @@ export function Hero() {
                     </p>
                     <div className="mt-9 flex flex-wrap items-center gap-4">
                         <Link
-                            href="#contact"
+                            href={BOOKING_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="group inline-flex items-center gap-2 rounded-sm bg-accent py-3 pl-6 pr-3 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90"
                         >
                             ご予約

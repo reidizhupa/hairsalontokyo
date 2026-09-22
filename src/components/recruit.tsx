@@ -34,7 +34,7 @@ export function Recruit() {
                             経験者はもちろん、美容師デビューを目指す方も歓迎します。技術面はもちろん、接客や働き方まで丁寧に向き合う研修制度があります。一人ひとりの成長を、時間をかけて見守るサロンです。
                         </p>
                         <Link
-                            href="mailto:recruit@kanzashi-hair.jp?subject=採用について"
+                            href="mailto:recruit@roots-asakusa.jp?subject=採用について"
                             className="group mt-8 inline-flex items-center gap-2 rounded-sm bg-accent py-3 pl-6 pr-3 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90"
                         >
                             採用について問い合わせる

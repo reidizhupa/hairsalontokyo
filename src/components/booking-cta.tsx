@@ -1,16 +1,12 @@
 import Link from "next/link";
-import {
-    ArrowUpRight,
-    Clock,
-    MapPin,
-    Phone,
-} from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight, Clock, MapPin } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./reveal";
 
+const BOOKING_URL = "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000805576";
+
 const DETAILS = [
-    { icon: MapPin, value: "東京都渋谷区神宮前3-2-1" },
-    { icon: Clock, value: "火〜日 10:00〜19:00" },
-    { icon: Phone, value: "03-1234-5678" },
+    { icon: MapPin, value: "東京都台東区西浅草3-28-19 ニッケンマンション1F" },
+    { icon: Clock, value: "10:00〜19:00（定休日：不定休）" },
 ];
 
 export function BookingCta() {
@@ -27,7 +23,9 @@ export function BookingCta() {
                                 空き枠には限りがあります。お早めにご予約を。
                             </h2>
                             <Link
-                                href="https://wa.me/810312345678"
+                                href={BOOKING_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="group mt-6 inline-flex items-center gap-2 rounded-sm bg-accent py-3 pl-6 pr-3 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90"
                             >
                                 ご予約
@@ -37,16 +35,16 @@ export function BookingCta() {
                             </Link>
                         </div>
 
-                        <div className="flex flex-col gap-2 border-t border-line pt-6 sm:w-56 sm:shrink-0 sm:border-t-0 sm:border-l sm:pl-10 sm:pt-0">
+                        <div className="flex flex-col gap-3 border-t border-line pt-6 sm:w-64 sm:shrink-0 sm:border-t-0 sm:border-l sm:pl-10 sm:pt-0">
                             {DETAILS.map((item) => (
                                 <div
                                     key={item.value}
-                                    className="flex items-center gap-2 text-sm whitespace-nowrap text-foreground-muted"
+                                    className="flex items-start gap-2 text-sm text-foreground-muted"
                                 >
                                     <item.icon
                                         size={16}
                                         weight="light"
-                                        className="shrink-0 text-foreground-muted/70"
+                                        className="mt-0.5 shrink-0 text-foreground-muted/70"
                                     />
                                     {item.value}
                                 </div>

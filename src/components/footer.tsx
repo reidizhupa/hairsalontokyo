@@ -15,10 +15,10 @@ export function Footer() {
             <div className="flex flex-col gap-8 border-t border-line pt-10 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                     <p className="font-serif text-lg font-medium tracking-tight">
-                        かんざし
+                        roots 浅草店
                     </p>
                     <p className="mt-2 max-w-xs text-sm text-foreground-muted">
-                        神宮前にある、完全予約制の小さな美容室です。
+                        浅草にある、完全予約制の小さな美容室です。
                     </p>
                 </div>
 
@@ -44,7 +44,7 @@ export function Footer() {
             </div>
 
             <p className="mt-10 text-xs text-foreground-muted">
-                © {new Date().getFullYear()} 美容室かんざし
+                © {new Date().getFullYear()} roots 浅草店
             </p>
         </footer>
     );

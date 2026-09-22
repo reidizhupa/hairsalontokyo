@@ -10,7 +10,7 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "美容室かんざし | 表参道の完全予約制ヘアサロン",
+  title: "roots 浅草店 | 浅草の完全予約制ヘアサロン",
   description: "一人ひとりに向き合う、落ち着いた美容室です。",
 };
 

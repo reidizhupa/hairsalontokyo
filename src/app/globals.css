@@ -6,8 +6,8 @@
     --surface-sunken: #f4f5f5;
     --foreground: #2e3837;
     --foreground-muted: #4a4a4a;
-    --accent: #ddbf96;
-    --accent-soft: #fff8e4;
+    --accent: #5ebcd8;
+    --accent-soft: #e9f6fa;
     --line: #e6ddd0;
 }
 
@@ -32,4 +32,13 @@ body {
 ::selection {
     background: var(--accent);
     color: #2e3837;
+}
+
+.no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
 }
