@@ -7,7 +7,7 @@ export const BRAND_HERO: HeroContent = {
     imageClassName: "object-cover object-[78%_20%] sm:object-[55%_20%] ",
     foregroundClassName:
         "object-cover object-[78%_20%] sm:object-[55%_20%] !top-19 md:!top-0",
-    heading: "地域に根を張り、\n未来を育てる。",
+    heading: "地域に根を張る\nヘアサロン。",
     subheading: "美容を通じて、この土地に暮らす人々の毎日に寄り添う。",
 };
 

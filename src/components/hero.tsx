@@ -59,7 +59,8 @@ export function Hero({
 
             <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-16 lg:px-10 lg:pb-50">
                 <Reveal className="mx-auto max-w-xl text-left sm:mx-0 sm:text-left">
-                    <h1 className="font-serif text-[24px] font-medium leading-[1.4] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                    <h1 className="font-serif text-[24px] font-medium leading-[1.4] tracking-tight text-[#135565] sm:text-5xl lg:text-6xl">
+                        ROOTS <br />
                         {content.heading.split("\n").map((line, i, arr) => (
                             <span key={line}>
                                 {line}
