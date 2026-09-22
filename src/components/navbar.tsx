@@ -6,7 +6,8 @@ import { useState } from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { List, X } from "@phosphor-icons/react/dist/ssr";
 
-const BOOKING_URL = "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000805576";
+const BOOKING_URL =
+    "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000805576";
 
 const LINKS = [
     { href: "#services", label: "Menu" },
@@ -38,12 +39,12 @@ export function Navbar() {
             <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
                 <Link href="#top" className="flex items-center">
                     <Image
-                        src="/logo_roots-nav.png"
-                        alt="roots hair salon ASAKUSA"
-                        width={429}
-                        height={427}
+                        src="/logo_full-nav.png"
+                        alt="roots hair salon"
+                        width={570}
+                        height={439}
                         priority
-                        className="h-12 w-auto"
+                        className="h-14 w-auto"
                     />
                 </Link>
 
