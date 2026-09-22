@@ -3,12 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
-import {
-    motion,
-    useReducedMotion,
-    useScroll,
-    useTransform,
-} from "motion/react";
 import { Reveal } from "./reveal";
 import type { HeroContent } from "@/lib/types";
 
@@ -27,18 +21,12 @@ export function Hero({
     secondaryHref = "#services",
     secondaryLabel = "メニューを見る",
 }: HeroProps) {
-    const reduce = useReducedMotion();
     const bookingIsExternal = bookingUrl.startsWith("http");
-    const { scrollY } = useScroll();
-    const y = useTransform(scrollY, [0, 900], [0, -140], { clamp: true });
-    const yImage = useTransform(scrollY, [0, 900], [-20, -65], {
-        clamp: true,
-    });
 
     return (
         <section
             id="top"
-            className="relative flex min-h-[95dvh] md:min-h-[95dvh] flex-col justify-end overflow-hidden bg-background sm:min-h-screen"
+            className="relative flex min-h-[95svh] flex-col justify-end overflow-hidden bg-background sm:min-h-svh"
         >
             <div className="absolute inset-0">
                 <Image
@@ -53,31 +41,23 @@ export function Hero({
                     }
                 />
                 {content.foregroundSrc && (
-                    <motion.div
-                        style={reduce ? undefined : { y: yImage }}
-                        className="absolute inset-0"
-                    >
-                        <Image
-                            src={content.foregroundSrc}
-                            alt={content.imageAlt}
-                            fill
-                            priority
-                            sizes="100vw"
-                            className={
-                                content.foregroundClassName ??
-                                content.imageClassName ??
-                                "object-cover object-[55%_20%]"
-                            }
-                        />
-                    </motion.div>
+                    <Image
+                        src={content.foregroundSrc}
+                        alt={content.imageAlt}
+                        fill
+                        priority
+                        sizes="100vw"
+                        className={
+                            content.foregroundClassName ??
+                            content.imageClassName ??
+                            "object-cover object-[55%_20%]"
+                        }
+                    />
                 )}
                 <div className="absolute inset-0 bg-linear-to-t from-accent-soft/70 from-15% via-accent-soft/80 md:via-accent-soft/20 via-45% to-transparent to-85%" />
             </div>
 
-            <motion.div
-                style={reduce ? undefined : { y }}
-                className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-16 lg:px-10 lg:pb-50"
-            >
+            <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-16 lg:px-10 lg:pb-50">
                 <Reveal className="max-w-xl">
                     <h1 className="font-serif text-3xl font-medium leading-[1.4] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                         {content.heading}
@@ -89,7 +69,11 @@ export function Hero({
                         <Link
                             href={bookingUrl}
                             target={bookingIsExternal ? "_blank" : undefined}
-                            rel={bookingIsExternal ? "noopener noreferrer" : undefined}
+                            rel={
+                                bookingIsExternal
+                                    ? "noopener noreferrer"
+                                    : undefined
+                            }
                             className="group inline-flex items-center gap-2 rounded-sm bg-accent py-3 pl-6 pr-3 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90"
                         >
                             {bookingLabel}
@@ -105,7 +89,7 @@ export function Hero({
                         </Link>
                     </div>
                 </Reveal>
-            </motion.div>
+            </div>
         </section>
     );
 }

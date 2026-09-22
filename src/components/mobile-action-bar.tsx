@@ -16,21 +16,20 @@ export function MobileActionBar({
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
-        const about = document.getElementById("about");
-        if (!about) return;
+        const hero = document.getElementById("top");
+        if (!hero) return;
 
-        const onScroll = () => {
-            setVisible(about.getBoundingClientRect().top <= 0);
-        };
-
-        onScroll();
-        window.addEventListener("scroll", onScroll, { passive: true });
-        return () => window.removeEventListener("scroll", onScroll);
+        const observer = new IntersectionObserver(
+            ([entry]) => setVisible(!entry.isIntersecting),
+            { threshold: 0, rootMargin: "0px 0px -10% 0px" },
+        );
+        observer.observe(hero);
+        return () => observer.disconnect();
     }, []);
 
     return (
         <div
-            className={`fixed inset-x-0 bottom-0 z-50 flex border-t border-line bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md transition-transform duration-300 ease-out lg:hidden ${
+            className={`fixed inset-x-0 bottom-0 z-50 flex border-t border-line bg-surface pb-[env(safe-area-inset-bottom)] transition-transform duration-300 ease-out lg:hidden ${
                 visible ? "translate-y-0" : "translate-y-full"
             }`}
         >

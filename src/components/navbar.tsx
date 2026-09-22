@@ -39,14 +39,14 @@ export function Navbar({
     const { scrollY } = useScroll();
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        setScrolled(latest > 12);
+        setScrolled((prev) => (prev ? latest > 4 : latest > 24));
     });
 
     return (
         <header
             className={`sticky top-0 z-50 transition-colors duration-300 ${
                 scrolled
-                    ? "bg-surface/90 backdrop-blur-md border-b border-line"
+                    ? "bg-surface/98 border-b border-line"
                     : "bg-transparent border-b border-transparent"
             }`}
         >
