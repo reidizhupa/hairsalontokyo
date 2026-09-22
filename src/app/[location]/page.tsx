@@ -10,9 +10,11 @@ import { Faq } from "@/components/faq";
 import { BookingCta } from "@/components/booking-cta";
 import { Footer } from "@/components/footer";
 import { MobileActionBar } from "@/components/mobile-action-bar";
+import { JsonLd } from "@/components/json-ld";
 import { ASAKUSA } from "@/lib/locations/asakusa";
 import { SUGAMO } from "@/lib/locations/sugamo";
 import { FAQ, STAFF } from "@/lib/company";
+import { localBusinessSchema } from "@/lib/structured-data";
 import type { LocationConfig, LocationSlug } from "@/lib/types";
 
 const LOCATION_CONFIGS: Record<string, LocationConfig> = {
@@ -72,9 +74,23 @@ export default async function LocationPage({
 
     const slug = config.slug as LocationSlug;
     const staff = STAFF.filter((member) => member.locations.includes(slug));
+    const schema = localBusinessSchema({
+        type: "HairSalon",
+        name: config.displayName,
+        path: `/${slug}`,
+        telephone: config.structuredAddress.telephone,
+        streetAddress: config.structuredAddress.streetAddress,
+        addressLocality: config.structuredAddress.addressLocality,
+        addressRegion: config.structuredAddress.addressRegion,
+        postalCode: config.structuredAddress.postalCode,
+        openingHours: config.structuredAddress.openingHours,
+        image: config.hero.imageSrc,
+        mapUrl: config.access.mapUrl,
+    });
 
     return (
         <>
+            <JsonLd data={schema} />
             <Navbar bookingUrl={config.bookingUrl} locationSlug={slug} />
             <main className="flex-1">
                 <HeroSplit

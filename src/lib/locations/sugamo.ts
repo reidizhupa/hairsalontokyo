@@ -31,6 +31,14 @@ export const SUGAMO: LocationConfig = {
             "メンズカット 巣鴨",
         ],
     },
+    structuredAddress: {
+        streetAddress: "千石4-26-2 SANSAN千石ビル2F 201号室",
+        addressLocality: "文京区",
+        addressRegion: "東京都",
+        postalCode: "112-0011",
+        telephone: "080-7678-6466",
+        openingHours: "Mo-Su 10:00-19:00",
+    },
     hero: {
         imageSrc: "/sugamo/sugamo_interior.webp",
         imageAlt: "サロンでくつろぐ女性",

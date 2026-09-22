@@ -11,10 +11,34 @@ const NAV_LINKS = [
     { href: "/#shops", label: "店舗を選ぶ" },
 ];
 
+const SEO_TITLE = "採用情報 | roots";
+const SEO_DESCRIPTION =
+    "roots の採用情報。スタイリスト・アシスタント募集要項、給与、応募から採用までの流れをご案内します。";
+
 export const metadata: Metadata = {
-    title: "採用情報 | roots",
-    description:
-        "roots の採用情報。スタイリスト・アシスタント募集要項、給与、応募から採用までの流れをご案内します。",
+    title: SEO_TITLE,
+    description: SEO_DESCRIPTION,
+    openGraph: {
+        title: SEO_TITLE,
+        description: SEO_DESCRIPTION,
+        siteName: "roots",
+        locale: "ja_JP",
+        type: "website",
+        images: [
+            {
+                url: "/og-image.jpg",
+                width: 1200,
+                height: 630,
+                alt: SEO_TITLE,
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: SEO_TITLE,
+        description: SEO_DESCRIPTION,
+        images: ["/og-image.jpg"],
+    },
 };
 
 export default function RecruitPage() {

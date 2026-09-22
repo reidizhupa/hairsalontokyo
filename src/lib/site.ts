@@ -1,0 +1,4 @@
+// Placeholder until the real production domain is decided — update this one
+// constant (and nothing else) once it is, since metadataBase/sitemap/robots
+// all derive from it.
+export const SITE_URL = "https://roots-hairsalon.jp";

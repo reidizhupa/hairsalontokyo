@@ -121,6 +121,15 @@ export interface SeoMeta {
     keywords: string[];
 }
 
+export interface StructuredAddress {
+    streetAddress: string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode: string;
+    telephone: string;
+    openingHours: string;
+}
+
 export interface LocationConfig {
     slug: LocationSlug;
     displayName: string;
@@ -129,6 +138,7 @@ export interface LocationConfig {
     instagramUrl: string;
     stylistBaseUrl: string;
     seo: SeoMeta;
+    structuredAddress: StructuredAddress;
     hero: HeroContent;
     about: AboutContent;
     menu: MenuContent;

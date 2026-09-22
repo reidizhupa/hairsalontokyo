@@ -34,10 +34,34 @@ const STAFF_HREFS_BY_NAME = Object.fromEntries(
     STAFF.map((person) => [person.name, resolveStaffHref(person)]),
 );
 
+const SEO_TITLE = "roots | 浅草・巣鴨の美容室、まつげ・眉サロン";
+const SEO_DESCRIPTION =
+    "美容を通じて、この土地に暮らす人々の毎日に寄り添う roots。浅草店・巣鴨本店の完全予約制ヘアサロンと、巣鴨のまつげ・眉サロンをご案内します。";
+
 export const metadata: Metadata = {
-    title: "roots | 浅草・巣鴨の美容室、まつげ・眉サロン",
-    description:
-        "美容を通じて、この土地に暮らす人々の毎日に寄り添う roots。浅草店・巣鴨本店の完全予約制ヘアサロンと、巣鴨のまつげ・眉サロンをご案内します。",
+    title: SEO_TITLE,
+    description: SEO_DESCRIPTION,
+    openGraph: {
+        title: SEO_TITLE,
+        description: SEO_DESCRIPTION,
+        siteName: "roots",
+        locale: "ja_JP",
+        type: "website",
+        images: [
+            {
+                url: "/og-image.jpg",
+                width: 1200,
+                height: 630,
+                alt: SEO_TITLE,
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: SEO_TITLE,
+        description: SEO_DESCRIPTION,
+        images: ["/og-image.jpg"],
+    },
 };
 
 export default function RootPage() {

@@ -7,6 +7,7 @@ import { Access } from "@/components/access";
 import { BookingCta } from "@/components/booking-cta";
 import { Footer } from "@/components/footer";
 import { MobileActionBar } from "@/components/mobile-action-bar";
+import { JsonLd } from "@/components/json-ld";
 import {
     EYELASH_ACCESS,
     EYELASH_BOOKING_URL,
@@ -16,7 +17,9 @@ import {
     EYELASH_INSTAGRAM_URL,
     EYELASH_MENU,
     EYELASH_SEO,
+    EYELASH_STRUCTURED_ADDRESS,
 } from "@/lib/eyelash";
+import { localBusinessSchema } from "@/lib/structured-data";
 
 const NAV_LINKS = [
     { href: "/", label: "TOP" },
@@ -53,9 +56,24 @@ export const metadata: Metadata = {
     },
 };
 
+const SCHEMA = localBusinessSchema({
+    type: "BeautySalon",
+    name: "roots 巣鴨店【アイラッシュ&アイブロウ】",
+    path: "/eyelash",
+    telephone: EYELASH_STRUCTURED_ADDRESS.telephone,
+    streetAddress: EYELASH_STRUCTURED_ADDRESS.streetAddress,
+    addressLocality: EYELASH_STRUCTURED_ADDRESS.addressLocality,
+    addressRegion: EYELASH_STRUCTURED_ADDRESS.addressRegion,
+    postalCode: EYELASH_STRUCTURED_ADDRESS.postalCode,
+    openingHours: EYELASH_STRUCTURED_ADDRESS.openingHours,
+    image: EYELASH_HERO.imageSrc,
+    mapUrl: EYELASH_ACCESS.mapUrl,
+});
+
 export default function EyelashPage() {
     return (
         <>
+            <JsonLd data={SCHEMA} />
             <Navbar
                 bookingUrl={EYELASH_BOOKING_URL}
                 links={NAV_LINKS}

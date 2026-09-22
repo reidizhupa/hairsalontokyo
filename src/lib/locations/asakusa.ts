@@ -31,6 +31,14 @@ export const ASAKUSA: LocationConfig = {
             "メンズカット 浅草",
         ],
     },
+    structuredAddress: {
+        streetAddress: "西浅草3-28-19 ニッケンマンション1F",
+        addressLocality: "台東区",
+        addressRegion: "東京都",
+        postalCode: "111-0035",
+        telephone: "070-3600-4508",
+        openingHours: "Mo-Su 10:00-19:00",
+    },
     hero: {
         imageSrc: "/asakusa_interior.webp",
         imageAlt: "明るく落ち着いた店内、スタイリングチェアと鏡が並ぶ",
