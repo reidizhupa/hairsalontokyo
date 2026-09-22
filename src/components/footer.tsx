@@ -5,10 +5,8 @@ import type { LocationSlug } from "@/lib/types";
 
 const LINKS = [
     { href: "#services", label: "Menu" },
-    { href: "#about", label: "About" },
     { href: "#stylists", label: "Staff" },
     { href: "#gallery", label: "Gallery" },
-    { href: "#recruit", label: "Recruit" },
     { href: "#access", label: "Access" },
     { href: "#faq", label: "FAQ" },
 ];

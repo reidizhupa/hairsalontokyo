@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { About } from "@/components/about";
 import { Services } from "@/components/services";
 import { Gallery } from "@/components/gallery";
 import { Access } from "@/components/access";
@@ -9,7 +8,6 @@ import { BookingCta } from "@/components/booking-cta";
 import { Footer } from "@/components/footer";
 import { MobileActionBar } from "@/components/mobile-action-bar";
 import {
-    EYELASH_ABOUT,
     EYELASH_ACCESS,
     EYELASH_BOOKING_URL,
     EYELASH_CONTACT,
@@ -22,7 +20,6 @@ import {
 
 const NAV_LINKS = [
     { href: "#services", label: "Menu" },
-    { href: "#about", label: "About" },
     { href: "#gallery", label: "Gallery" },
     { href: "#access", label: "Access" },
     { href: "#contact", label: "Contact" },
@@ -61,7 +58,6 @@ export default function EyelashPage() {
             <Navbar bookingUrl={EYELASH_BOOKING_URL} links={NAV_LINKS} />
             <main className="flex-1">
                 <Hero content={EYELASH_HERO} bookingUrl={EYELASH_BOOKING_URL} />
-                <About content={EYELASH_ABOUT} />
                 <Services content={EYELASH_MENU} />
                 <Gallery content={EYELASH_GALLERY} />
                 <Access content={EYELASH_ACCESS} />
