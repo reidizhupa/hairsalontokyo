@@ -15,6 +15,25 @@ const DETAILS = [
     { icon: Phone, value: "070-3600-4508", href: "tel:07036004508" },
 ];
 
+const FEATURES = [
+    "担当制（1人のスタイリストが最後まで担当）",
+    "朝10時前・夜19時以降も受付OK",
+    "お子様連れOK",
+    "ドリンクサービスあり",
+    "禁煙",
+];
+
+const PAYMENT_METHODS = [
+    "Visa",
+    "Mastercard",
+    "JCB",
+    "American Express",
+    "Diners Club",
+    "交通系IC",
+    "PayPay",
+    "COIN+",
+];
+
 export function BookingCta() {
     return (
         <section id="contact" className="px-4 py-14 sm:px-8 lg:px-10">
@@ -71,6 +90,40 @@ export function BookingCta() {
                                 ),
                             )}
                         </div>
+                    </div>
+
+                    <div className="mt-6 flex flex-col gap-2 px-0 text-xs text-foreground-muted sm:mt-8 sm:px-10 sm:text-sm md:px-12">
+                        <p className="flex flex-wrap gap-x-2 gap-y-1">
+                            {FEATURES.map((item, i) => (
+                                <span key={item} className="whitespace-nowrap">
+                                    {item}
+                                    {i < FEATURES.length - 1 && (
+                                        <span className="ml-2 text-foreground-muted/50">
+                                            ・
+                                        </span>
+                                    )}
+                                </span>
+                            ))}
+                        </p>
+                        <p className="flex flex-wrap gap-x-2 gap-y-1">
+                            <span className="whitespace-nowrap">
+                                お支払い：
+                            </span>
+                            {PAYMENT_METHODS.map((item, i) => (
+                                <span key={item} className="whitespace-nowrap">
+                                    {item}
+                                    {i < PAYMENT_METHODS.length - 1 && (
+                                        <span className="ml-2 text-foreground-muted/50">
+                                            ・
+                                        </span>
+                                    )}
+                                </span>
+                            ))}
+                        </p>
+                        <p className="text-foreground-muted/70">
+                            ※
+                            無断キャンセルの場合、施術料金の100%をキャンセル料として申し受けます。
+                        </p>
                     </div>
                 </Reveal>
             </div>
