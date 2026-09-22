@@ -29,15 +29,15 @@ export function About() {
                         About
                     </span>
                     <h2 className="mt-5 font-serif text-md md:text-3xl font-thin text-gray-500 leading-snug tracking-tight ">
-                        少人数制の、指名スタイリスト。
+                        「提案力」を大切にするサロン。
                         <br />
-                        予約が重ならない仕組みだから、
+                        お客様の想いに寄り添いながら、
                         <br />
-                        一日一人と、じっくり向き合う。
+                        本当に似合うデザインをご提案します。
                         <br />
-                        カウンセリングから仕上げまで、
+                        表参道で培った技術を、浅草で。
                         <br />
-                        同じ担当者が、最後まで。
+                        地域に根ざし、長く通える一軒へ。
                     </h2>
                 </div>
 

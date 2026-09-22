@@ -42,10 +42,10 @@ export function Hero() {
             >
                 <Reveal className="max-w-xl">
                     <h1 className="font-serif text-4xl font-medium leading-[1.4] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                        髪に、静かな集中を。
+                        髪の悩みに、本気で向き合う。
                     </h1>
                     <p className="mt-6 max-w-md text-base leading-relaxed text-foreground-muted">
-                        一人ひとりの髪質と暮らしに合わせて、丁寧なカットとカラーをご提案します。
+                        理想のスタイルだけでなく、髪や頭皮の本当の悩みに向き合い、根本から解決へ導きます。
                     </p>
                     <div className="mt-9 flex flex-wrap items-center gap-4">
                         <Link
