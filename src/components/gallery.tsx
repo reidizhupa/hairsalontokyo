@@ -95,10 +95,12 @@ export function Gallery() {
                         sizes="(min-width: 768px) 32vw, 48vw"
                         className="object-cover object-top"
                     />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 bg-black/60 text-white transition-colors group-hover:bg-black/70">
-                        <span className="text-2xl leading-none tracking-[0.2em]">
-                            ・・・
-                        </span>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/60 text-white transition-colors group-hover:bg-black/70">
+                        <div className="flex items-center gap-1">
+                            <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                            <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                            <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                        </div>
                         <span className="text-sm font-medium">もっと見る</span>
                     </div>
                 </Link>
