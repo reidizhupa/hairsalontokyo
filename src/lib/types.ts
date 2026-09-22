@@ -8,6 +8,11 @@ export interface HeroContent {
     imageSrc: string;
     imageAlt: string;
     imageClassName?: string;
+    // Optional transparent cutout layered on top of imageSrc (same canvas/
+    // alignment), for split background+subject photo pairs.
+    foregroundSrc?: string;
+    // Defaults to imageClassName when omitted.
+    foregroundClassName?: string;
     heading: string;
     subheading: string;
 }

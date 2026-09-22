@@ -1,10 +1,13 @@
 import type { AboutContent, HeroContent } from "./types";
 
 export const BRAND_HERO: HeroContent = {
-    imageSrc: "/herobg15.png",
+    imageSrc: "/herobg17.png",
+    foregroundSrc: "/herobg18.png",
     imageAlt: "やわらかな光の中でくつろぐ女性",
     imageClassName:
         "scale-130 object-cover object-[75%_50%] translate-y-25 sm:scale-100 sm:object-[55%_20%] sm:translate-y-0",
+    foregroundClassName:
+        "scale-130 object-cover object-[75%_50%] translate-y-32 sm:scale-100 sm:object-[55%_20%] sm:translate-y-8",
     heading: "地域に根を張り、未来を育てる。",
     subheading: "美容を通じて、この土地に暮らす人々の毎日に寄り添う。",
 };
