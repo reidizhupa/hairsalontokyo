@@ -2,7 +2,7 @@ import type { AboutContent, HeroContent } from "./types";
 
 export const BRAND_HERO: HeroContent = {
     imageSrc: "/herobg17.png",
-    foregroundSrc: "/herobg18.png",
+    foregroundSrc: "/herobg18.webp",
     imageAlt: "やわらかな光の中でくつろぐ女性",
     imageClassName:
         "scale-130 object-cover object-[75%_50%] translate-y-25 sm:scale-100 sm:object-[55%_20%] sm:translate-y-0",
