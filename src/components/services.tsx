@@ -1,36 +1,30 @@
 import Image from "next/image";
-import {
-    Drop,
-    FlowerLotus,
-    Scissors,
-    Sparkle,
-    Wind,
-} from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./reveal";
-import { unsplash } from "@/lib/unsplash";
 
-const SUPPORTING = [
+const MENU_HIGHLIGHTS = [
     {
-        icon: Drop,
-        title: "カラー / バレイヤージュ",
-        body: "根元の伸び方に合わせた、髪に負担の少ない色設計。",
+        title: "カット",
+        tag: "髪の生え方や癖を見極めて。",
+        src: "/menu/cut.jpg",
     },
     {
-        icon: Sparkle,
-        title: "トリートメント",
-        body: "薬剤で傷んだ髪への集中補修ケア。",
+        title: "カラー",
+        tag: "髪に負担の少ない色設計。",
+        src: "/menu/color.jpg",
     },
     {
-        icon: FlowerLotus,
-        title: "ブライダル / 撮影",
-        body: "リハーサル付き、出張スタイリングにも対応。",
+        title: "髪質改善トリートメント",
+        tag: "根本から、うるツヤ髪へ。",
+        src: "/menu/treatment.jpg",
     },
     {
-        icon: Wind,
-        title: "ヘッドスパ",
-        body: "カットの前に、ゆっくりと頭皮をほぐします。",
+        title: "メンズカット",
+        tag: "一人ひとりの骨格に似合わせて。",
+        src: "/menu/mens-cut.jpg",
     },
 ];
+
+const OTHER_MENU = ["パーマ", "縮毛矯正", "ヘッドスパ", "その他ケアメニュー"];
 
 export function Services() {
     return (
@@ -41,56 +35,40 @@ export function Services() {
                         Menu
                     </span>
                     <h2 className="mt-5 max-w-xl font-serif text-base font-thin text-gray-500 leading-snug tracking-tight md:text-3xl">
-                        メニューは、あえて少なく。
+                        一人ひとりの髪質や悩みに合わせて。
                     </h2>
                 </Reveal>
 
-                <Reveal className="mt-10 grid grid-cols-1 gap-3 sm:mt-12 sm:gap-4 md:grid-cols-4 md:grid-rows-2">
-                    <div className="md:col-span-2 md:row-span-2">
-                        <div className="relative h-full min-h-64 overflow-hidden rounded-sm sm:min-h-80">
+                <Reveal className="mt-12 grid grid-cols-2 gap-3 sm:mt-16 sm:gap-4 lg:grid-cols-4">
+                    {MENU_HIGHLIGHTS.map((item) => (
+                        <div
+                            key={item.title}
+                            className="relative aspect-3/4 overflow-hidden rounded-sm"
+                        >
                             <Image
-                                src={unsplash(
-                                    "1647140655214-e4a2d914971f",
-                                    900,
-                                    900,
-                                )}
-                                alt="鋏でカットを行うスタイリストの手元"
+                                src={item.src}
+                                alt={item.title}
                                 fill
-                                sizes="(min-width: 768px) 45vw, 100vw"
+                                sizes="(min-width: 1024px) 23vw, 45vw"
                                 className="object-cover"
                             />
-                            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
-                            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
-                                <h3 className="mt-3 font-serif text-xl font-medium text-white">
-                                    カット
+                            <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
+                            <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+                                <h3 className="font-serif text-base font-medium text-white sm:text-lg">
+                                    {item.title}
                                 </h3>
-                                <p className="mt-1.5 max-w-xs text-sm leading-relaxed text-white/80">
-                                    髪の生え方や癖を見極めてから、鋏を入れます。
+                                <p className="mt-1 text-xs leading-relaxed text-white/80 sm:text-sm">
+                                    {item.tag}
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {SUPPORTING.map((item) => (
-                        <div key={item.title} className="md:col-span-1">
-                            <div className="flex h-full flex-col justify-between rounded-sm border border-line bg-surface p-5 sm:p-7">
-                                <item.icon
-                                    size={22}
-                                    weight="light"
-                                    className="text-accent"
-                                />
-                                <div className="mt-6">
-                                    <h3 className="font-serif text-lg font-medium text-gray-500">
-                                        {item.title}
-                                    </h3>
-                                    <p className="mt-1.5 text-sm leading-relaxed text-foreground-muted">
-                                        {item.body}
-                                    </p>
-                                </div>
                             </div>
                         </div>
                     ))}
                 </Reveal>
+
+                <p className="mt-8 text-sm text-foreground-muted sm:mt-10">
+                    {OTHER_MENU.join("　・　")}
+                    など、その他のメニューもお気軽にご相談ください。
+                </p>
             </div>
         </section>
     );
