@@ -36,7 +36,7 @@ export function Navbar() {
                     : "bg-transparent border-b border-transparent"
             }`}
         >
-            <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
+            <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-10">
                 <Link href="#top" className="flex items-center">
                     <Image
                         src="/logo_full-nav.png"
@@ -44,7 +44,7 @@ export function Navbar() {
                         width={570}
                         height={439}
                         priority
-                        className="h-14 w-auto"
+                        className="h-16 w-auto sm:h-14"
                     />
                 </Link>
 
