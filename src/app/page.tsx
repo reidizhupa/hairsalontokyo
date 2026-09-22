@@ -16,10 +16,10 @@ import type { StaffMember } from "@/lib/types";
 
 const NAV_LINKS = [
     { href: "#about", label: "About" },
-    { href: "#stylists", label: "Staff" },
-    { href: "#faq", label: "FAQ" },
-    { href: "#recruit", label: "Recruit" },
     { href: "#shops", label: "Shops" },
+    { href: "#stylists", label: "Staff" },
+    { href: "#recruit", label: "Recruit" },
+    { href: "#faq", label: "FAQ" },
 ];
 
 function resolveStaffHref(person: StaffMember): string | undefined {
@@ -58,10 +58,10 @@ export default function RootPage() {
                     secondaryLabel="こだわりを見る"
                 />
                 <About content={BRAND_ABOUT} />
-                <Stylists staff={STAFF} hrefsByName={STAFF_HREFS_BY_NAME} />
-                <Faq items={FAQ} />
-                <Recruit content={RECRUIT} />
                 <LocationOverview cards={OVERVIEW_CARDS} />
+                <Stylists staff={STAFF} hrefsByName={STAFF_HREFS_BY_NAME} />
+                <Recruit content={RECRUIT} />
+                <Faq items={FAQ} />
             </main>
             <Footer
                 displayName="roots"

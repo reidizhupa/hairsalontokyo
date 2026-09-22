@@ -18,8 +18,14 @@ export const BRAND_ABOUT: AboutContent = {
         "日常まで幸せにする体験を。",
     ],
     images: [
-        { src: "/sugamo/about-1.jpg", alt: "roots 巣鴨本店の明るく開放的な店内" },
-        { src: "/interior.webp", alt: "roots 浅草店の落ち着いた店内" },
-        { src: "/eyelash/about-1.jpg", alt: "roots 巣鴨店 アイラッシュ&アイブロウの店内" },
+        {
+            src: "/sugamo/sugamo_interior.webp",
+            alt: "roots 巣鴨本店の明るく開放的な店内",
+        },
+        { src: "/asakusa_interior.webp", alt: "roots 浅草店の落ち着いた店内" },
+        {
+            src: "/eyelash/eyelash_interior.webp",
+            alt: "roots 巣鴨店 アイラッシュ&アイブロウの店内",
+        },
     ],
 };
