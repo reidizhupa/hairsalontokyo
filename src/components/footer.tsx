@@ -8,6 +8,7 @@ const LINKS = [
     { href: "#gallery", label: "Gallery" },
     { href: "#recruit", label: "Recruit" },
     { href: "#access", label: "Access" },
+    { href: "#faq", label: "FAQ" },
 ];
 
 export function Footer() {

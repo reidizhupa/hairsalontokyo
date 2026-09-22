@@ -7,6 +7,7 @@ import { Recruit } from "@/components/recruit";
 import { Gallery } from "@/components/gallery";
 import { Testimonials } from "@/components/testimonials";
 import { Access } from "@/components/access";
+import { Faq } from "@/components/faq";
 import { BookingCta } from "@/components/booking-cta";
 import { Footer } from "@/components/footer";
 
@@ -22,6 +23,7 @@ export default function Home() {
                 <Recruit />
                 <Gallery />
                 <Access />
+                <Faq />
                 <BookingCta />
             </main>
             <Footer />

@@ -16,6 +16,7 @@ const LINKS = [
     { href: "#gallery", label: "Gallery" },
     { href: "#recruit", label: "Recruit" },
     { href: "#access", label: "Access" },
+    { href: "#faq", label: "FAQ" },
     { href: "#contact", label: "Contact" },
 ];
 
