@@ -98,7 +98,6 @@ export interface RecruitStep {
 }
 
 export interface RecruitContent {
-    imageId: string;
     heading: string[];
     pitch: string;
     contactUrl: string;

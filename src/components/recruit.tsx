@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./reveal";
-import { unsplash } from "@/lib/unsplash";
 import type { RecruitContent } from "@/lib/types";
 
 interface RecruitProps {
@@ -16,7 +15,7 @@ export function Recruit({ content }: RecruitProps) {
                 <Reveal className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12">
                     <div className="relative aspect-4/5 w-full overflow-hidden rounded-sm md:aspect-auto md:h-120">
                         <Image
-                            src={unsplash(content.imageId, 900, 1100)}
+                            src="/recruit.jpg"
                             alt="真剣にお客様の髪と向き合うスタイリスト"
                             fill
                             sizes="(min-width: 768px) 45vw, 100vw"

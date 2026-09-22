@@ -5,7 +5,6 @@ import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { RECRUIT } from "@/lib/company";
-import { unsplash } from "@/lib/unsplash";
 
 const NAV_LINKS = [
     { href: "/", label: "トップ" },
@@ -32,7 +31,7 @@ export default function RecruitPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16">
                         <div className="relative h-80 sm:h-105 md:sticky md:top-16 md:h-[calc(100vh-4rem)]">
                             <Image
-                                src={unsplash(RECRUIT.imageId, 1200, 1500)}
+                                src="/recruit.jpg"
                                 alt="真剣にお客様の髪と向き合うスタイリスト"
                                 fill
                                 priority

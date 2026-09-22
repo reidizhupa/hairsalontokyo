@@ -89,7 +89,6 @@ export const FAQ: FaqItem[] = [
 ];
 
 export const RECRUIT: RecruitContent = {
-    imageId: "1593702288056-7927b442d0fa",
     heading: ["共に育ち、長く働ける仲間を、", "募集しています。"],
     pitch: "「共に育つ」を大切に、仲間の成長を自分ごととして考えるチームです。教育カリキュラムのもと、2年以内のデビューを目指せる環境。アシスタントから店長・次世代リーダーへ、長期的なキャリアを描けます。",
     contactUrl: "https://www.instagram.com/roots_kawashimayuki/",
