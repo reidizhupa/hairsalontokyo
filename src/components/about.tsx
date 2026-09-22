@@ -12,7 +12,10 @@ export function About({ content }: AboutProps) {
             id="about"
             className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 md:py-28 lg:px-10"
         >
-            <Reveal className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12">
+            <Reveal
+                className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12"
+                mobileStatic
+            >
                 <div>
                     <span className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-accent">
                         About
