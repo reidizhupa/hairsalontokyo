@@ -6,6 +6,7 @@ import { Stylists } from "@/components/stylists";
 import { Recruit } from "@/components/recruit";
 import { Gallery } from "@/components/gallery";
 import { Testimonials } from "@/components/testimonials";
+import { Access } from "@/components/access";
 import { BookingCta } from "@/components/booking-cta";
 import { Footer } from "@/components/footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
                 <Stylists />
                 <Recruit />
                 <Gallery />
+                <Access />
                 <BookingCta />
             </main>
             <Footer />

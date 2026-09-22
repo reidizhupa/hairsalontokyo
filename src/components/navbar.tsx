@@ -14,6 +14,7 @@ const LINKS = [
     { href: "#stylists", label: "Staff" },
     { href: "#gallery", label: "Gallery" },
     { href: "#recruit", label: "Recruit" },
+    { href: "#access", label: "Access" },
     { href: "#contact", label: "Contact" },
 ];
 
