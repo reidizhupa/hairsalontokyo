@@ -29,15 +29,15 @@ export function About() {
                         About
                     </span>
                     <h2 className="mt-5 font-serif text-md md:text-3xl font-thin text-gray-500 leading-snug tracking-tight ">
-                        「提案力」を大切にするサロン。
+                        技術だけでなく、人として、
                         <br />
-                        お客様の想いに寄り添いながら、
+                        一生涯寄り添えるサロンでありたい。
                         <br />
-                        本当に似合うデザインをご提案します。
+                        期待を超える技術と、
                         <br />
-                        表参道で培った技術を、浅草で。
+                        大切な人を連れてきたくなる空間で、
                         <br />
-                        地域に根ざし、長く通える一軒へ。
+                        日常まで幸せにする体験を。
                     </h2>
                 </div>
 

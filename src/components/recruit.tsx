@@ -26,12 +26,12 @@ export function Recruit() {
                             Recruit
                         </span>
                         <h2 className="mt-5 font-serif text-base font-thin text-gray-500 leading-snug tracking-tight md:text-3xl">
-                            技術を高め合う仲間を、
+                            共に育ち、長く働ける仲間を、
                             <br />
                             募集しています。
                         </h2>
                         <p className="mt-4 max-w-md text-sm leading-relaxed text-foreground-muted sm:text-base">
-                            表参道の有名店で培った技術を、浅草で。「提案力」を大切にしながら、お客様一人ひとりと本気で向き合う仕事です。アシスタントからスタイリストへ、着実に経験を積める環境があります。
+                            「共に育つ」を大切に、仲間の成長を自分ごととして考えるチームです。教育カリキュラムのもと、2年以内のデビューを目指せる環境。アシスタントから店長・次世代リーダーへ、長期的なキャリアを描けます。
                         </p>
                         <Link
                             href="mailto:recruit@roots-asakusa.jp?subject=採用について"
