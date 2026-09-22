@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { CaretDownIcon, MapPinIcon } from "@phosphor-icons/react/dist/ssr";
 import { LOCATIONS } from "@/lib/locations";
-import type { LocationSlug } from "@/lib/types";
+import type { NavSlug } from "@/lib/types";
 
 interface LocationSwitcherProps {
-    currentSlug?: LocationSlug;
+    currentSlug?: NavSlug;
     className?: string;
 }
 

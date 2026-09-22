@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { InstagramLogo } from "@phosphor-icons/react/dist/ssr";
 import { LOCATIONS } from "@/lib/locations";
-import type { LocationSlug } from "@/lib/types";
+import type { NavSlug } from "@/lib/types";
 
 const LINKS = [
+    { href: "/", label: "TOP" },
     { href: "#services", label: "Menu" },
     { href: "#stylists", label: "Staff" },
     { href: "#gallery", label: "Gallery" },
@@ -15,7 +16,7 @@ interface FooterProps {
     displayName: string;
     footerTagline: string;
     instagramUrl: string;
-    locationSlug?: LocationSlug;
+    locationSlug?: NavSlug;
     links?: { href: string; label: string }[];
     showLocations?: boolean;
 }

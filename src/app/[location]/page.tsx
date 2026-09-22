@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
+import { HeroSplit } from "@/components/hero-split";
 import { Services } from "@/components/services";
 import { Stylists } from "@/components/stylists";
 import { Gallery } from "@/components/gallery";
@@ -77,7 +77,11 @@ export default async function LocationPage({
         <>
             <Navbar bookingUrl={config.bookingUrl} locationSlug={slug} />
             <main className="flex-1">
-                <Hero content={config.hero} bookingUrl={config.bookingUrl} />
+                <HeroSplit
+                    content={config.hero}
+                    eyebrow={slug === "sugamo" ? "Sugamo" : "Asakusa"}
+                    bookingUrl={config.bookingUrl}
+                />
                 <Services content={config.menu} />
                 <Stylists
                     staff={staff}

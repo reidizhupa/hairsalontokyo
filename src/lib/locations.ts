@@ -1,7 +1,7 @@
-import type { LocationSlug } from "./types";
+import type { NavSlug } from "./types";
 
 export interface LocationNavEntry {
-    slug: LocationSlug;
+    slug: NavSlug;
     label: string;
     shortLabel: string;
     href: string;
@@ -19,5 +19,11 @@ export const LOCATIONS: LocationNavEntry[] = [
         label: "roots 浅草店",
         shortLabel: "浅草店",
         href: "/asakusa",
+    },
+    {
+        slug: "eyelash",
+        label: "roots 巣鴨店【アイラッシュ&アイブロウ】",
+        shortLabel: "アイラッシュ&アイブロウ",
+        href: "/eyelash",
     },
 ];

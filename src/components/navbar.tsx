@@ -6,9 +6,10 @@ import { useState } from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { List, X } from "@phosphor-icons/react/dist/ssr";
 import { LocationSwitcher } from "./location-switcher";
-import type { LocationSlug } from "@/lib/types";
+import type { NavSlug } from "@/lib/types";
 
 const DEFAULT_LINKS = [
+    { href: "/", label: "TOP" },
     { href: "#services", label: "Menu" },
     { href: "#stylists", label: "Staff" },
     { href: "#gallery", label: "Gallery" },
@@ -20,7 +21,7 @@ const DEFAULT_LINKS = [
 interface NavbarProps {
     bookingUrl: string;
     bookingLabel?: string;
-    locationSlug?: LocationSlug;
+    locationSlug?: NavSlug;
     links?: { href: string; label: string }[];
     showLocationSwitcher?: boolean;
 }

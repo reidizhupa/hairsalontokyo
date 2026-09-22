@@ -30,7 +30,7 @@ export const EYELASH_SEO: SeoMeta = {
 };
 
 export const EYELASH_HERO: HeroContent = {
-    imageSrc: "/eyelash/hero.jpg",
+    imageSrc: "/eyelash/eyelash_interior.webp",
     imageAlt: "サロンでくつろぐ女性の目もと",
     imageClassName: "object-cover object-[75%_15%]",
     heading: "巣鴨で、目もとから美しく。",
@@ -46,12 +46,18 @@ export const EYELASH_ABOUT: AboutContent = {
         "贅沢なひとときをお過ごしください。",
     ],
     images: [
-        { src: "/eyelash/about-1.jpg", alt: "白を基調にした、明るく開放的な店内" },
+        {
+            src: "/eyelash/about-1.jpg",
+            alt: "白を基調にした、明るく開放的な店内",
+        },
         {
             src: "/eyelash/about-2.jpg",
             alt: "観葉植物とリネンに囲まれたくつろぎの一角",
         },
-        { src: "/eyelash/about-3.jpg", alt: "リクライニングチェアのある施術スペース" },
+        {
+            src: "/eyelash/about-3.jpg",
+            alt: "リクライニングチェアのある施術スペース",
+        },
     ],
 };
 

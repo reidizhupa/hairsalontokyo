@@ -32,7 +32,7 @@ export const SUGAMO: LocationConfig = {
         ],
     },
     hero: {
-        imageSrc: "/sugamo/hero.jpg",
+        imageSrc: "/sugamo/sugamo_interior.webp",
         imageAlt: "サロンでくつろぐ女性",
         imageClassName: "object-cover object-[85%_15%]",
         heading: "巣鴨から、髪と暮らしに寄り添う。",

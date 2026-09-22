@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
+import { HeroSplit } from "@/components/hero-split";
 import { Services } from "@/components/services";
 import { Gallery } from "@/components/gallery";
 import { Access } from "@/components/access";
@@ -19,6 +19,7 @@ import {
 } from "@/lib/eyelash";
 
 const NAV_LINKS = [
+    { href: "/", label: "TOP" },
     { href: "#services", label: "Menu" },
     { href: "#gallery", label: "Gallery" },
     { href: "#access", label: "Access" },
@@ -55,9 +56,17 @@ export const metadata: Metadata = {
 export default function EyelashPage() {
     return (
         <>
-            <Navbar bookingUrl={EYELASH_BOOKING_URL} links={NAV_LINKS} />
+            <Navbar
+                bookingUrl={EYELASH_BOOKING_URL}
+                links={NAV_LINKS}
+                locationSlug="eyelash"
+            />
             <main className="flex-1">
-                <Hero content={EYELASH_HERO} bookingUrl={EYELASH_BOOKING_URL} />
+                <HeroSplit
+                    content={EYELASH_HERO}
+                    eyebrow="Eyelash & Brow"
+                    bookingUrl={EYELASH_BOOKING_URL}
+                />
                 <Services content={EYELASH_MENU} />
                 <Gallery content={EYELASH_GALLERY} />
                 <Access content={EYELASH_ACCESS} />
@@ -68,6 +77,7 @@ export default function EyelashPage() {
                 footerTagline="roots 巣鴨本店と同じ建物にある、まつげ・眉の完全予約制サロンです。"
                 instagramUrl={EYELASH_INSTAGRAM_URL}
                 links={NAV_LINKS}
+                locationSlug="eyelash"
             />
             <MobileActionBar
                 bookingUrl={EYELASH_BOOKING_URL}

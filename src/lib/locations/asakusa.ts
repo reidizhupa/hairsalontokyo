@@ -32,12 +32,11 @@ export const ASAKUSA: LocationConfig = {
         ],
     },
     hero: {
-        imageSrc: "/herobg15.png",
-        imageAlt: "やわらかな光の中でくつろぐ女性",
-        imageClassName:
-            "scale-130 object-cover object-[75%_50%] translate-y-25 sm:scale-100 sm:object-[55%_20%] sm:translate-y-0",
-        heading: "地域に根を張り、未来を育てる。",
-        subheading: "美容を通じて、この土地に暮らす人々の毎日に寄り添う。",
+        imageSrc: "/asakusa_interior.webp",
+        imageAlt: "明るく落ち着いた店内、スタイリングチェアと鏡が並ぶ",
+        imageClassName: "object-cover object-[50%_40%]",
+        heading: "浅草・入谷の日常に、寄り添う美容室。",
+        subheading: "交番横の路面店。完全予約制の、小さなヘアサロンです。",
     },
     about: {
         heading: [

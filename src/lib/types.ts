@@ -1,5 +1,9 @@
 export type LocationSlug = "asakusa" | "sugamo";
 
+// Broader than LocationSlug: includes non-LocationConfig pages (like the
+// eyelash service page) that still belong in the shop switcher / footer nav.
+export type NavSlug = LocationSlug | "eyelash";
+
 export interface HeroContent {
     imageSrc: string;
     imageAlt: string;
