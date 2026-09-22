@@ -26,7 +26,7 @@ export function Hero({
     return (
         <section
             id="top"
-            className="relative flex min-h-[95svh] flex-col justify-end overflow-hidden bg-background sm:min-h-svh"
+            className="relative flex min-h-[75svh] flex-col justify-end overflow-hidden bg-background sm:min-h-svh"
         >
             <div className="absolute inset-0">
                 <Image
@@ -54,18 +54,21 @@ export function Hero({
                         }
                     />
                 )}
-                <div className="absolute inset-0 bg-linear-to-t from-accent-soft/70 from-15% via-accent-soft/80 md:via-accent-soft/20 via-45% to-transparent to-85%" />
+                <div className="absolute inset-0 bg-linear-to-t from-accent-soft/70 from-15% via-accent-soft/10 md:via-accent-soft/1 via-45% to-transparent to-85%" />
             </div>
 
             <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-16 lg:px-10 lg:pb-50">
-                <Reveal className="max-w-xl">
-                    <h1 className="font-serif text-3xl font-medium leading-[1.4] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                        {content.heading}
+                <Reveal className="mx-auto max-w-xl text-left sm:mx-0 sm:text-left">
+                    <h1 className="font-serif text-[24px] font-medium leading-[1.4] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                        {content.heading.split("\n").map((line, i, arr) => (
+                            <span key={line}>
+                                {line}
+                                {i < arr.length - 1 && <br />}
+                            </span>
+                        ))}
                     </h1>
-                    <p className="mt-6 max-w-md text-base leading-relaxed text-foreground-muted">
-                        {content.subheading}
-                    </p>
-                    <div className="mt-9 flex flex-wrap items-center gap-4">
+
+                    <div className="mt-9 flex flex-wrap items-center gap-4 sm:justify-start">
                         <Link
                             href={bookingUrl}
                             target={bookingIsExternal ? "_blank" : undefined}

@@ -4,11 +4,10 @@ export const BRAND_HERO: HeroContent = {
     imageSrc: "/herobg17.png",
     foregroundSrc: "/herobg18.webp",
     imageAlt: "やわらかな光の中でくつろぐ女性",
-    imageClassName:
-        "scale-130 object-cover object-[75%_50%] translate-y-25 sm:scale-100 sm:object-[55%_20%] sm:translate-y-0",
+    imageClassName: "object-cover object-[78%_20%] sm:object-[55%_20%] ",
     foregroundClassName:
-        "scale-130 object-cover object-[75%_50%] translate-y-32 sm:scale-100 sm:object-[55%_20%] sm:translate-y-8",
-    heading: "地域に根を張り、未来を育てる。",
+        "object-cover object-[78%_20%] sm:object-[55%_20%] !top-19 md:!top-0",
+    heading: "地域に根を張り、\n未来を育てる。",
     subheading: "美容を通じて、この土地に暮らす人々の毎日に寄り添う。",
 };
 
