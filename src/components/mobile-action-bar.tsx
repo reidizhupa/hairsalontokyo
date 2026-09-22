@@ -4,9 +4,15 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CalendarCheck, InstagramLogo } from "@phosphor-icons/react/dist/ssr";
 
-const BOOKING_URL = "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000805576";
+interface MobileActionBarProps {
+    bookingUrl: string;
+    instagramUrl: string;
+}
 
-export function MobileActionBar() {
+export function MobileActionBar({
+    bookingUrl,
+    instagramUrl,
+}: MobileActionBarProps) {
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
@@ -29,14 +35,16 @@ export function MobileActionBar() {
             }`}
         >
             <Link
-                href="https://instagram.com"
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex flex-1 items-center justify-center gap-2 border-r border-line py-3.5 text-sm font-medium text-foreground-muted transition-colors active:bg-surface-sunken"
             >
                 <InstagramLogo size={18} weight="light" />
                 Instagram
             </Link>
             <Link
-                href={BOOKING_URL}
+                href={bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex flex-1 items-center justify-center gap-2 bg-accent py-3.5 text-sm font-medium text-white transition-transform active:scale-[0.98]"

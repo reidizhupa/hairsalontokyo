@@ -10,19 +10,14 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { AnimatePresence, motion } from "motion/react";
 import { Reveal } from "./reveal";
+import type { GalleryContent } from "@/lib/types";
 
-const SHOTS = [
-    { src: "/gallery/shot-1.jpg", width: 904, height: 1280 },
-    { src: "/gallery/shot-2.jpg", width: 853, height: 1280 },
-    { src: "/gallery/shot-3.jpg", width: 852, height: 1280 },
-    { src: "/gallery/shot-4.jpg", width: 1010, height: 1280 },
-    { src: "/gallery/shot-5.jpg", width: 853, height: 1280 },
-];
+interface GalleryProps {
+    content: GalleryContent;
+}
 
-const MORE_TILE_IMAGE = "/gallery/shot-6.jpg";
-const MORE_URL = "https://beauty.hotpepper.jp/slnH000805576/style/";
-
-export function Gallery() {
+export function Gallery({ content }: GalleryProps) {
+    const { shots } = content;
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     useEffect(() => {
@@ -32,11 +27,11 @@ export function Gallery() {
         const onKey = (e: KeyboardEvent) => {
             if (e.key === "Escape") setOpenIndex(null);
             if (e.key === "ArrowRight") {
-                setOpenIndex((i) => (i === null ? i : (i + 1) % SHOTS.length));
+                setOpenIndex((i) => (i === null ? i : (i + 1) % shots.length));
             }
             if (e.key === "ArrowLeft") {
                 setOpenIndex((i) =>
-                    i === null ? i : (i - 1 + SHOTS.length) % SHOTS.length,
+                    i === null ? i : (i - 1 + shots.length) % shots.length,
                 );
             }
         };
@@ -45,7 +40,7 @@ export function Gallery() {
             document.body.style.overflow = "";
             window.removeEventListener("keydown", onKey);
         };
-    }, [openIndex]);
+    }, [openIndex, shots.length]);
 
     return (
         <section
@@ -57,12 +52,12 @@ export function Gallery() {
                     Gallery
                 </span>
                 <h2 className="mt-5 font-serif text-base font-thin text-gray-500 leading-snug tracking-tight md:text-3xl">
-                    一人ひとりに似合わせた、スタイルの一例です。
+                    {content.heading}
                 </h2>
             </Reveal>
 
             <Reveal className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 md:grid-cols-3">
-                {SHOTS.map((shot, i) => (
+                {shots.map((shot, i) => (
                     <button
                         key={shot.src}
                         type="button"
@@ -82,13 +77,13 @@ export function Gallery() {
                 ))}
 
                 <Link
-                    href={MORE_URL}
+                    href={content.moreUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative aspect-square overflow-hidden rounded-sm"
                 >
                     <Image
-                        src={MORE_TILE_IMAGE}
+                        src={content.moreTileImage}
                         alt="もっと写真を見る"
                         fill
                         quality={95}
@@ -132,8 +127,8 @@ export function Gallery() {
                                 setOpenIndex((i) =>
                                     i === null
                                         ? i
-                                        : (i - 1 + SHOTS.length) %
-                                          SHOTS.length,
+                                        : (i - 1 + shots.length) %
+                                          shots.length,
                                 );
                             }}
                             aria-label="前へ"
@@ -143,10 +138,10 @@ export function Gallery() {
                         </button>
 
                         <Image
-                            src={SHOTS[openIndex].src}
+                            src={shots[openIndex].src}
                             alt="サロンでの仕上がりの一例"
-                            width={SHOTS[openIndex].width}
-                            height={SHOTS[openIndex].height}
+                            width={shots[openIndex].width}
+                            height={shots[openIndex].height}
                             quality={95}
                             onClick={(e) => e.stopPropagation()}
                             className="h-auto max-h-[85vh] w-auto max-w-[90vw] rounded-sm object-contain"
@@ -157,7 +152,7 @@ export function Gallery() {
                             onClick={(e) => {
                                 e.stopPropagation();
                                 setOpenIndex((i) =>
-                                    i === null ? i : (i + 1) % SHOTS.length,
+                                    i === null ? i : (i + 1) % shots.length,
                                 );
                             }}
                             aria-label="次へ"

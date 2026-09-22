@@ -5,40 +5,21 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./reveal";
+import type { LocationSlug, StaffMember } from "@/lib/types";
 
-const HOTPEPPER_STYLIST_BASE =
-    "https://beauty.hotpepper.jp/slnH000805576/stylist/";
+interface StylistsProps {
+    staff: StaffMember[];
+    stylistBaseUrl?: string;
+    locationSlug?: LocationSlug;
+    hrefsByName?: Record<string, string | undefined>;
+}
 
-const STYLISTS = [
-    {
-        name: "やぎ あんじ",
-        role: "代表 / スタイリスト",
-        src: "/staff/yagi-anji.jpg",
-        profileId: "T001096667",
-    },
-    {
-        name: "村松 和哉",
-        role: "代表 / スタイリスト",
-        src: "/staff/muramatsu-kazuya.jpg",
-        profileId: "T001096668",
-    },
-    {
-        name: "澤本 芽衣",
-        role: "スタイリスト",
-        src: "/staff/sawamoto-mei.jpg",
-        profileId: "T001096669",
-    },
-    { name: "TAIKI", role: "アシスタント", src: "/staff/taiki.jpg" },
-    {
-        name: "松浦 茉潤",
-        role: "アシスタント",
-        src: "/staff/matsuura-mahiro.jpg",
-    },
-    { name: "松家 はるか", role: "アシスタント", src: null },
-    { name: "菅野 大樹", role: "アシスタント", src: null },
-];
-
-export function Stylists() {
+export function Stylists({
+    staff,
+    stylistBaseUrl,
+    locationSlug,
+    hrefsByName,
+}: StylistsProps) {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [canScrollPrev, setCanScrollPrev] = useState(false);
     const [canScrollNext, setCanScrollNext] = useState(true);
@@ -110,7 +91,16 @@ export function Stylists() {
                         ref={scrollRef}
                         className="no-scrollbar mt-10 flex snap-x snap-mandatory items-start gap-5 overflow-x-auto overflow-y-hidden scroll-pl-4 pb-2 [touch-action:pan-x] sm:mt-14 sm:gap-8 sm:scroll-pl-6 lg:scroll-pl-10"
                     >
-                        {STYLISTS.map((person) => {
+                        {staff.map((person) => {
+                            const profileId = locationSlug
+                                ? person.profileIdByLocation?.[locationSlug]
+                                : undefined;
+                            const href =
+                                hrefsByName?.[person.name] ??
+                                (profileId && stylistBaseUrl
+                                    ? `${stylistBaseUrl}${profileId}/`
+                                    : undefined);
+
                             const cardContent = (
                                 <>
                                     <div className="relative mx-auto aspect-square w-full overflow-hidden rounded-full">
@@ -140,10 +130,10 @@ export function Stylists() {
                                 </>
                             );
 
-                            return person.profileId ? (
+                            return href ? (
                                 <Link
                                     key={person.name}
-                                    href={`${HOTPEPPER_STYLIST_BASE}${person.profileId}/`}
+                                    href={href}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="group w-30 shrink-0 snap-start text-center sm:w-36 lg:w-40"

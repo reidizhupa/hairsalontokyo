@@ -6,35 +6,19 @@ import {
     Phone,
 } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./reveal";
+import type { ContactContent, ContactIcon } from "@/lib/types";
 
-const BOOKING_URL = "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000805576";
+const ICONS: Record<ContactIcon, typeof MapPin> = {
+    map: MapPin,
+    clock: Clock,
+    phone: Phone,
+};
 
-const DETAILS = [
-    { icon: MapPin, value: "東京都台東区西浅草3-28-19 ニッケンマンション1F" },
-    { icon: Clock, value: "10:00〜19:00（定休日：不定休）" },
-    { icon: Phone, value: "070-3600-4508", href: "tel:07036004508" },
-];
+interface BookingCtaProps {
+    content: ContactContent;
+}
 
-const FEATURES = [
-    "担当制（1人のスタイリストが最後まで担当）",
-    "朝10時前・夜19時以降も受付OK",
-    "お子様連れOK",
-    "ドリンクサービスあり",
-    "禁煙",
-];
-
-const PAYMENT_METHODS = [
-    "Visa",
-    "Mastercard",
-    "JCB",
-    "American Express",
-    "Diners Club",
-    "交通系IC",
-    "PayPay",
-    "COIN+",
-];
-
-export function BookingCta() {
+export function BookingCta({ content }: BookingCtaProps) {
     return (
         <section id="contact" className="px-4 py-14 sm:px-8 lg:px-10">
             <div className="mx-auto max-w-7xl">
@@ -45,10 +29,10 @@ export function BookingCta() {
                                 Contact
                             </span>
                             <h2 className="mt-5 max-w-md font-serif text-base font-thin leading-snug tracking-tight text-gray-500 md:text-3xl">
-                                空き枠には限りがあります。お早めにご予約を。
+                                {content.heading}
                             </h2>
                             <Link
-                                href={BOOKING_URL}
+                                href={content.bookingUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group mt-6 inline-flex items-center gap-2 rounded-sm bg-accent py-3 pl-6 pr-3 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90"
@@ -61,14 +45,15 @@ export function BookingCta() {
                         </div>
 
                         <div className="flex flex-col gap-3 border-t border-line pt-6 sm:w-64 sm:shrink-0 sm:border-t-0 sm:border-l sm:pl-10 sm:pt-0">
-                            {DETAILS.map((item) =>
-                                item.href ? (
+                            {content.details.map((item) => {
+                                const Icon = ICONS[item.icon];
+                                return item.href ? (
                                     <Link
                                         key={item.value}
                                         href={item.href}
                                         className="flex items-start gap-2 text-sm text-foreground-muted transition-colors hover:text-accent"
                                     >
-                                        <item.icon
+                                        <Icon
                                             size={16}
                                             weight="light"
                                             className="mt-0.5 shrink-0 text-foreground-muted/70"
@@ -80,24 +65,24 @@ export function BookingCta() {
                                         key={item.value}
                                         className="flex items-start gap-2 text-sm text-foreground-muted"
                                     >
-                                        <item.icon
+                                        <Icon
                                             size={16}
                                             weight="light"
                                             className="mt-0.5 shrink-0 text-foreground-muted/70"
                                         />
                                         {item.value}
                                     </div>
-                                ),
-                            )}
+                                );
+                            })}
                         </div>
                     </div>
 
                     <div className="mt-6 flex flex-col gap-2 px-0 text-xs text-foreground-muted sm:mt-8 sm:px-10 sm:text-sm md:px-12">
                         <p className="flex flex-wrap gap-x-2 gap-y-1">
-                            {FEATURES.map((item, i) => (
+                            {content.features.map((item, i) => (
                                 <span key={item} className="whitespace-nowrap">
                                     {item}
-                                    {i < FEATURES.length - 1 && (
+                                    {i < content.features.length - 1 && (
                                         <span className="ml-2 text-foreground-muted/50">
                                             ・
                                         </span>
@@ -109,10 +94,10 @@ export function BookingCta() {
                             <span className="whitespace-nowrap">
                                 お支払い：
                             </span>
-                            {PAYMENT_METHODS.map((item, i) => (
+                            {content.paymentMethods.map((item, i) => (
                                 <span key={item} className="whitespace-nowrap">
                                     {item}
-                                    {i < PAYMENT_METHODS.length - 1 && (
+                                    {i < content.paymentMethods.length - 1 && (
                                         <span className="ml-2 text-foreground-muted/50">
                                             ・
                                         </span>
@@ -121,8 +106,7 @@ export function BookingCta() {
                             ))}
                         </p>
                         <p className="text-foreground-muted/70">
-                            ※
-                            無断キャンセルの場合、施術料金の100%をキャンセル料として申し受けます。
+                            {content.cancellationNote}
                         </p>
                     </div>
                 </Reveal>

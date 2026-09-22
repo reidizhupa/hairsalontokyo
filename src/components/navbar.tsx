@@ -5,11 +5,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { List, X } from "@phosphor-icons/react/dist/ssr";
+import { LocationSwitcher } from "./location-switcher";
+import type { LocationSlug } from "@/lib/types";
 
-const BOOKING_URL =
-    "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000805576";
-
-const LINKS = [
+const DEFAULT_LINKS = [
     { href: "#services", label: "Menu" },
     { href: "#about", label: "About" },
     { href: "#stylists", label: "Staff" },
@@ -20,7 +19,22 @@ const LINKS = [
     { href: "#contact", label: "Contact" },
 ];
 
-export function Navbar() {
+interface NavbarProps {
+    bookingUrl: string;
+    bookingLabel?: string;
+    locationSlug?: LocationSlug;
+    links?: { href: string; label: string }[];
+    showLocationSwitcher?: boolean;
+}
+
+export function Navbar({
+    bookingUrl,
+    bookingLabel = "ご予約",
+    locationSlug,
+    links = DEFAULT_LINKS,
+    showLocationSwitcher = true,
+}: NavbarProps) {
+    const bookingIsExternal = bookingUrl.startsWith("http");
     const [scrolled, setScrolled] = useState(false);
     const [open, setOpen] = useState(false);
     const { scrollY } = useScroll();
@@ -38,7 +52,7 @@ export function Navbar() {
             }`}
         >
             <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-10">
-                <Link href="#top" className="flex items-center">
+                <Link href="/" className="flex items-center">
                     <Image
                         src="/logo_full-nav.png"
                         alt="roots hair salon"
@@ -50,7 +64,7 @@ export function Navbar() {
                 </Link>
 
                 <nav className="hidden lg:flex items-center gap-8 text-sm text-gray-500">
-                    {LINKS.map((link) => (
+                    {links.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
@@ -61,14 +75,20 @@ export function Navbar() {
                     ))}
                 </nav>
 
-                <div className="flex items-center gap-2 sm:gap-3">
+                <div className="flex items-center gap-3 sm:gap-4">
+                    {showLocationSwitcher && (
+                        <LocationSwitcher
+                            currentSlug={locationSlug}
+                            className="hidden lg:block"
+                        />
+                    )}
                     <Link
-                        href={BOOKING_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={bookingUrl}
+                        target={bookingIsExternal ? "_blank" : undefined}
+                        rel={bookingIsExternal ? "noopener noreferrer" : undefined}
                         className="hidden items-center rounded-sm bg-accent px-4 py-2 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90 sm:px-5 sm:py-2.5 lg:inline-flex"
                     >
-                        ご予約
+                        {bookingLabel}
                     </Link>
                     <button
                         type="button"
@@ -84,7 +104,7 @@ export function Navbar() {
             {open && (
                 <div className="lg:hidden border-t border-line bg-surface px-4 py-4 sm:px-6">
                     <nav className="flex flex-col gap-1 text-sm">
-                        {LINKS.map((link) => (
+                        {links.map((link) => (
                             <Link
                                 key={link.href}
                                 href={link.href}
@@ -95,14 +115,19 @@ export function Navbar() {
                             </Link>
                         ))}
                     </nav>
+                    {showLocationSwitcher && (
+                        <div className="mt-3 border-t border-line pt-3">
+                            <LocationSwitcher currentSlug={locationSlug} />
+                        </div>
+                    )}
                     <Link
-                        href={BOOKING_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={bookingUrl}
+                        target={bookingIsExternal ? "_blank" : undefined}
+                        rel={bookingIsExternal ? "noopener noreferrer" : undefined}
                         onClick={() => setOpen(false)}
                         className="mt-3 inline-flex w-full items-center justify-center rounded-sm bg-accent px-5 py-2.5 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90"
                     >
-                        ご予約
+                        {bookingLabel}
                     </Link>
                 </div>
             )}

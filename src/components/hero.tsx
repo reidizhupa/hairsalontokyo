@@ -10,29 +10,44 @@ import {
     useTransform,
 } from "motion/react";
 import { Reveal } from "./reveal";
+import type { HeroContent } from "@/lib/types";
 
-const HERO_IMAGE_ALT = "やわらかな光の中でくつろぐ女性";
-const BOOKING_URL =
-    "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000805576";
+interface HeroProps {
+    content: HeroContent;
+    bookingUrl: string;
+    bookingLabel?: string;
+    secondaryHref?: string;
+    secondaryLabel?: string;
+}
 
-export function Hero() {
+export function Hero({
+    content,
+    bookingUrl,
+    bookingLabel = "ご予約",
+    secondaryHref = "#services",
+    secondaryLabel = "メニューを見る",
+}: HeroProps) {
     const reduce = useReducedMotion();
+    const bookingIsExternal = bookingUrl.startsWith("http");
     const { scrollY } = useScroll();
     const y = useTransform(scrollY, [0, 900], [0, -140], { clamp: true });
 
     return (
         <section
             id="top"
-            className="relative flex min-h-[90dvh] md:min-h-[95dvh] flex-col justify-end overflow-hidden bg-background sm:min-h-screen"
+            className="relative flex min-h-[95dvh] md:min-h-[95dvh] flex-col justify-end overflow-hidden bg-background sm:min-h-screen"
         >
             <div className="absolute inset-0">
                 <Image
-                    src="/herobg15.png"
-                    alt={HERO_IMAGE_ALT}
+                    src={content.imageSrc}
+                    alt={content.imageAlt}
                     fill
                     priority
                     sizes="100vw"
-                    className="scale-130 object-cover object-[75%_50%] translate-y-25 sm:scale-100 sm:object-[55%_20%] sm:translate-y-0"
+                    className={
+                        content.imageClassName ??
+                        "object-cover object-[55%_20%]"
+                    }
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-accent-soft/70 from-15% via-accent-soft/80 md:via-accent-soft/20 via-45% to-transparent to-85%" />
             </div>
@@ -43,28 +58,28 @@ export function Hero() {
             >
                 <Reveal className="max-w-xl">
                     <h1 className="font-serif text-3xl font-medium leading-[1.4] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                        地域に根を張り、未来を育てる。
+                        {content.heading}
                     </h1>
                     <p className="mt-6 max-w-md text-base leading-relaxed text-foreground-muted">
-                        美容を通じて、この土地に暮らす人々の毎日に寄り添う。
+                        {content.subheading}
                     </p>
                     <div className="mt-9 flex flex-wrap items-center gap-4">
                         <Link
-                            href={BOOKING_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href={bookingUrl}
+                            target={bookingIsExternal ? "_blank" : undefined}
+                            rel={bookingIsExternal ? "noopener noreferrer" : undefined}
                             className="group inline-flex items-center gap-2 rounded-sm bg-accent py-3 pl-6 pr-3 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90"
                         >
-                            ご予約
+                            {bookingLabel}
                             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                                 <ArrowUpRight size={14} weight="bold" />
                             </span>
                         </Link>
                         <Link
-                            href="#services"
+                            href={secondaryHref}
                             className="inline-flex items-center rounded-sm border border-accent bg-white px-6 py-3 text-sm font-medium text-accent transition-colors hover:bg-accent-soft"
                         >
-                            メニューを見る
+                            {secondaryLabel}
                         </Link>
                     </div>
                 </Reveal>

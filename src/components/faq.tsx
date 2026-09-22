@@ -3,31 +3,13 @@
 import { useState } from "react";
 import { CaretDownIcon } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./reveal";
+import type { FaqItem } from "@/lib/types";
 
-const FAQS = [
-    {
-        q: "初めての美容室は緊張します…。新規でも予約しても大丈夫？",
-        a: "もちろん大丈夫です！rootsでは新規のお客様も大歓迎です。",
-    },
-    {
-        q: "どのメニューにするか迷います…。どんなクーポンで予約すればいいの？",
-        a: "メニューが決まっていなくても大丈夫です！rootsでは、ご希望や髪の状態をカウンセリングで確認し、最適なメニューをご提案します。「どのクーポンを選べばいいかわからない」という方も、まずは気になるクーポンでご予約ください。ご予約前のご質問は、お電話やInstagramのDMでもお気軽にどうぞ！",
-    },
-    {
-        q: "髪色や髪型などどうしたいかが決まってなくても大丈夫ですか？",
-        a: "もちろん大丈夫です！rootsでは「似合う髪型がわからない」「髪色はおまかせしたい」というお客様も多くご来店されています。",
-    },
-    {
-        q: "美容室が苦手です…。",
-        a: "美容室が苦手な方も、大丈夫です！「何を話せばいいかわからない」「希望をうまく伝えられない」という方も多くいらっしゃいます。無理に会話をする必要もありませんので、リラックスしてお過ごしください。",
-    },
-    {
-        q: "スタイリング剤何使えばいい？",
-        a: "スタイリング剤は何を使えばいいかわからなくても大丈夫です。髪質や長さ、なりたい仕上がりに合わせて、ワックス・オイル・バームなどから最適なものをご提案します。ご自宅で再現しやすい使い方までお伝えしますので、スタイリングが苦手な方もお気軽にご相談ください。お店で使っている商品もおすすめです。",
-    },
-];
+interface FaqProps {
+    items: FaqItem[];
+}
 
-export function Faq() {
+export function Faq({ items }: FaqProps) {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
@@ -43,7 +25,7 @@ export function Faq() {
                 </Reveal>
 
                 <Reveal className="mt-10 border-t border-line sm:mt-12">
-                    {FAQS.map((item, i) => {
+                    {items.map((item, i) => {
                         const isOpen = openIndex === i;
                         return (
                             <div key={item.q} className="border-b border-line">
