@@ -1,22 +1,33 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./reveal";
+
+const HOTPEPPER_STYLIST_BASE =
+    "https://beauty.hotpepper.jp/slnH000805576/stylist/";
 
 const STYLISTS = [
     {
         name: "やぎ あんじ",
         role: "代表 / スタイリスト",
         src: "/staff/yagi-anji.jpg",
+        profileId: "T001096667",
     },
     {
         name: "村松 和哉",
         role: "代表 / スタイリスト",
         src: "/staff/muramatsu-kazuya.jpg",
+        profileId: "T001096668",
     },
-    { name: "澤本 芽衣", role: "スタイリスト", src: "/staff/sawamoto-mei.jpg" },
+    {
+        name: "澤本 芽衣",
+        role: "スタイリスト",
+        src: "/staff/sawamoto-mei.jpg",
+        profileId: "T001096669",
+    },
     { name: "TAIKI", role: "アシスタント", src: "/staff/taiki.jpg" },
     {
         name: "松浦 茉潤",
@@ -99,37 +110,55 @@ export function Stylists() {
                         ref={scrollRef}
                         className="no-scrollbar mt-10 flex snap-x snap-mandatory items-start gap-5 overflow-x-auto overflow-y-hidden scroll-pl-4 pb-2 [touch-action:pan-x] sm:mt-14 sm:gap-8 sm:scroll-pl-6 lg:scroll-pl-10"
                     >
-                        {STYLISTS.map((person) => (
-                            <div
-                                key={person.name}
-                                className="w-30 shrink-0 snap-start text-center sm:w-36 lg:w-40"
-                            >
-                                <div className="relative mx-auto aspect-square w-full overflow-hidden rounded-full">
-                                    {person.src ? (
-                                        <Image
-                                            src={person.src}
-                                            alt={`${person.name}のポートレート`}
-                                            fill
-                                            quality={95}
-                                            sizes="(min-width: 1024px) 160px, (min-width: 640px) 144px, 120px"
-                                            className="object-cover object-[50%_15%]"
-                                        />
-                                    ) : (
-                                        <div className="flex h-full w-full items-center justify-center bg-accent-soft">
-                                            <span className="font-serif text-3xl text-accent">
-                                                {person.name.charAt(0)}
-                                            </span>
-                                        </div>
-                                    )}
+                        {STYLISTS.map((person) => {
+                            const cardContent = (
+                                <>
+                                    <div className="relative mx-auto aspect-square w-full overflow-hidden rounded-full">
+                                        {person.src ? (
+                                            <Image
+                                                src={person.src}
+                                                alt={`${person.name}のポートレート`}
+                                                fill
+                                                quality={95}
+                                                sizes="(min-width: 1024px) 160px, (min-width: 640px) 144px, 120px"
+                                                className="object-cover object-[50%_15%] transition-transform duration-300 group-hover:scale-105"
+                                            />
+                                        ) : (
+                                            <div className="flex h-full w-full items-center justify-center bg-accent-soft">
+                                                <span className="font-serif text-3xl text-accent">
+                                                    {person.name.charAt(0)}
+                                                </span>
+                                            </div>
+                                        )}
+                                    </div>
+                                    <h3 className="mt-4 text-sm font-medium text-gray-500 transition-colors group-hover:text-accent">
+                                        {person.name}
+                                    </h3>
+                                    <p className="text-sm text-foreground-muted">
+                                        {person.role}
+                                    </p>
+                                </>
+                            );
+
+                            return person.profileId ? (
+                                <Link
+                                    key={person.name}
+                                    href={`${HOTPEPPER_STYLIST_BASE}${person.profileId}/`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group w-30 shrink-0 snap-start text-center sm:w-36 lg:w-40"
+                                >
+                                    {cardContent}
+                                </Link>
+                            ) : (
+                                <div
+                                    key={person.name}
+                                    className="w-30 shrink-0 snap-start text-center sm:w-36 lg:w-40"
+                                >
+                                    {cardContent}
                                 </div>
-                                <h3 className="mt-4 text-sm font-medium text-gray-500">
-                                    {person.name}
-                                </h3>
-                                <p className="text-sm text-foreground-muted">
-                                    {person.role}
-                                </p>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </Reveal>
             </div>
