@@ -26,12 +26,12 @@ export function Recruit() {
                             Recruit
                         </span>
                         <h2 className="mt-5 font-serif text-base font-thin text-gray-500 leading-snug tracking-tight md:text-3xl">
-                            一緒に働く仲間を、
+                            技術を高め合う仲間を、
                             <br />
                             募集しています。
                         </h2>
                         <p className="mt-4 max-w-md text-sm leading-relaxed text-foreground-muted sm:text-base">
-                            経験者はもちろん、美容師デビューを目指す方も歓迎します。技術面はもちろん、接客や働き方まで丁寧に向き合う研修制度があります。一人ひとりの成長を、時間をかけて見守るサロンです。
+                            表参道の有名店で培った技術を、浅草で。「提案力」を大切にしながら、お客様一人ひとりと本気で向き合う仕事です。アシスタントからスタイリストへ、着実に経験を積める環境があります。
                         </p>
                         <Link
                             href="mailto:recruit@roots-asakusa.jp?subject=採用について"
