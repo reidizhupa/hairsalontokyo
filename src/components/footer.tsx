@@ -86,9 +86,17 @@ export function Footer({
                 </div>
             </div>
 
-            <p className="mt-10 text-xs text-foreground-muted">
-                © {new Date().getFullYear()} {displayName}
-            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-foreground-muted">
+                <p>
+                    © {new Date().getFullYear()} {displayName}
+                </p>
+                <Link
+                    href="/privacy-policy"
+                    className="transition-colors hover:text-foreground"
+                >
+                    プライバシーポリシー
+                </Link>
+            </div>
         </footer>
     );
 }

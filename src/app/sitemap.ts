@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { path: "/sugamo", priority: 0.9, changeFrequency: "weekly" },
         { path: "/eyelash", priority: 0.9, changeFrequency: "weekly" },
         { path: "/recruit", priority: 0.6, changeFrequency: "monthly" },
+        { path: "/privacy-policy", priority: 0.3, changeFrequency: "monthly" },
     ];
 
     const lastModified = new Date();
