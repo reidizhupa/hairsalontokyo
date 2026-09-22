@@ -32,7 +32,7 @@ export function Hero() {
                     fill
                     priority
                     sizes="100vw"
-                    className="object-cover object-[75%_20%] sm:object-[55%_20%]"
+                    className="scale-130 object-cover object-[75%_50%] translate-y-25 sm:scale-100 sm:object-[55%_20%] sm:translate-y-0"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-accent-soft/70 from-15% via-accent-soft/80 md:via-accent-soft/20 via-45% to-transparent to-85%" />
             </div>
@@ -42,7 +42,7 @@ export function Hero() {
                 className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-16 lg:px-10 lg:pb-50"
             >
                 <Reveal className="max-w-xl">
-                    <h1 className="font-serif text-4xl font-medium leading-[1.4] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                    <h1 className="font-serif text-3xl font-medium leading-[1.4] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                         髪の悩みに、本気で向き合う。
                     </h1>
                     <p className="mt-6 max-w-md text-base leading-relaxed text-foreground-muted">
