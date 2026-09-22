@@ -20,6 +20,13 @@ export const STAFF: StaffMember[] = [
         profileIdByLocation: { asakusa: "T001096668", sugamo: "T000961666" },
     },
     {
+        name: "カワシマ",
+        role: "スタイリスト（メンズ限定）",
+        src: "/staff/kawashima-yuuki.jpg",
+        locations: ["sugamo"],
+        profileIdByLocation: { sugamo: "T000966654" },
+    },
+    {
         name: "澤本 芽衣",
         role: "スタイリスト",
         src: "/staff/sawamoto-mei.jpg",
@@ -50,13 +57,7 @@ export const STAFF: StaffMember[] = [
         src: null,
         locations: ["asakusa", "sugamo"],
     },
-    {
-        name: "カワシマ",
-        role: "スタイリスト（メンズ限定）",
-        src: "/staff/kawashima-yuuki.jpg",
-        locations: ["sugamo"],
-        profileIdByLocation: { sugamo: "T000966654" },
-    },
+
     {
         name: "ひなた",
         role: "アシスタント",
