@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import { MobileActionBar } from "@/components/mobile-action-bar";
 import "./globals.css";
@@ -9,9 +9,52 @@ const notoSansJP = Noto_Sans_JP({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const SITE_NAME = "roots 浅草店";
+const SITE_TITLE = "roots 浅草店 | 浅草の完全予約制ヘアサロン";
+const SITE_DESCRIPTION =
+  "表参道の有名店で培った技術を浅草で。「提案力」を大切に、髪や頭皮の本当の悩みに向き合う完全予約制のヘアサロン。カット・カラー・縮毛矯正・髪質改善トリートメントに対応。";
+
 export const metadata: Metadata = {
-  title: "roots 浅草店 | 浅草の完全予約制ヘアサロン",
-  description: "一人ひとりに向き合う、落ち着いた美容室です。",
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  keywords: [
+    "浅草 美容室",
+    "浅草 ヘアサロン",
+    "roots 浅草店",
+    "レイヤーカット 浅草",
+    "縮毛矯正 浅草",
+    "髪質改善トリートメント",
+    "カラー 浅草",
+    "メンズカット 浅草",
+  ],
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
+    locale: "ja_JP",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: SITE_TITLE,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ["/og-image.jpg"],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#5ebcd8",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

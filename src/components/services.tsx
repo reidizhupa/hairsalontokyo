@@ -1,5 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "./reveal";
+
+const MENU_URL = "https://beauty.hotpepper.jp/slnH000805576/coupon/";
 
 const MENU_HIGHLIGHTS = [
     {
@@ -41,16 +44,19 @@ export function Services() {
 
                 <Reveal className="mt-12 grid grid-cols-2 gap-3 sm:mt-16 sm:gap-4 lg:grid-cols-4">
                     {MENU_HIGHLIGHTS.map((item) => (
-                        <div
+                        <Link
                             key={item.title}
-                            className="relative aspect-3/4 overflow-hidden rounded-sm"
+                            href={MENU_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group relative aspect-3/4 overflow-hidden rounded-sm"
                         >
                             <Image
                                 src={item.src}
                                 alt={item.title}
                                 fill
                                 sizes="(min-width: 1024px) 23vw, 45vw"
-                                className="object-cover"
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
                             <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
@@ -61,12 +67,24 @@ export function Services() {
                                     {item.tag}
                                 </p>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </Reveal>
 
                 <p className="mt-8 text-sm text-foreground-muted sm:mt-10">
-                    {OTHER_MENU.join("　・　")}
+                    {OTHER_MENU.map((item, i) => (
+                        <span key={item}>
+                            <Link
+                                href={MENU_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline decoration-line underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+                            >
+                                {item}
+                            </Link>
+                            {i < OTHER_MENU.length - 1 && "　・　"}
+                        </span>
+                    ))}
                     など、その他のメニューもお気軽にご相談ください。
                 </p>
             </div>
