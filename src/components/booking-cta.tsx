@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { ArrowUpRight, Clock, MapPin } from "@phosphor-icons/react/dist/ssr";
+import {
+    ArrowUpRight,
+    Clock,
+    MapPin,
+    Phone,
+} from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./reveal";
 
 const BOOKING_URL = "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000805576";
@@ -7,6 +12,7 @@ const BOOKING_URL = "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000805
 const DETAILS = [
     { icon: MapPin, value: "東京都台東区西浅草3-28-19 ニッケンマンション1F" },
     { icon: Clock, value: "10:00〜19:00（定休日：不定休）" },
+    { icon: Phone, value: "070-3600-4508", href: "tel:07036004508" },
 ];
 
 export function BookingCta() {
@@ -36,19 +42,34 @@ export function BookingCta() {
                         </div>
 
                         <div className="flex flex-col gap-3 border-t border-line pt-6 sm:w-64 sm:shrink-0 sm:border-t-0 sm:border-l sm:pl-10 sm:pt-0">
-                            {DETAILS.map((item) => (
-                                <div
-                                    key={item.value}
-                                    className="flex items-start gap-2 text-sm text-foreground-muted"
-                                >
-                                    <item.icon
-                                        size={16}
-                                        weight="light"
-                                        className="mt-0.5 shrink-0 text-foreground-muted/70"
-                                    />
-                                    {item.value}
-                                </div>
-                            ))}
+                            {DETAILS.map((item) =>
+                                item.href ? (
+                                    <Link
+                                        key={item.value}
+                                        href={item.href}
+                                        className="flex items-start gap-2 text-sm text-foreground-muted transition-colors hover:text-accent"
+                                    >
+                                        <item.icon
+                                            size={16}
+                                            weight="light"
+                                            className="mt-0.5 shrink-0 text-foreground-muted/70"
+                                        />
+                                        {item.value}
+                                    </Link>
+                                ) : (
+                                    <div
+                                        key={item.value}
+                                        className="flex items-start gap-2 text-sm text-foreground-muted"
+                                    >
+                                        <item.icon
+                                            size={16}
+                                            weight="light"
+                                            className="mt-0.5 shrink-0 text-foreground-muted/70"
+                                        />
+                                        {item.value}
+                                    </div>
+                                ),
+                            )}
                         </div>
                     </div>
                 </Reveal>

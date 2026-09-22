@@ -12,7 +12,8 @@ import {
 import { Reveal } from "./reveal";
 
 const HERO_IMAGE_ALT = "やわらかな光の中でくつろぐ女性";
-const BOOKING_URL = "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000805576";
+const BOOKING_URL =
+    "https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000805576";
 
 export function Hero() {
     const reduce = useReducedMotion();
@@ -26,7 +27,7 @@ export function Hero() {
         >
             <div className="absolute inset-0">
                 <Image
-                    src="/herobg.jpg"
+                    src="/herobg15.png"
                     alt={HERO_IMAGE_ALT}
                     fill
                     priority
