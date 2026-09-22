@@ -12,7 +12,7 @@ const notoSansJP = Noto_Sans_JP({
 const SITE_NAME = "roots 浅草店";
 const SITE_TITLE = "roots 浅草店 | 浅草の完全予約制ヘアサロン";
 const SITE_DESCRIPTION =
-  "表参道の有名店で培った技術を浅草で。「提案力」を大切に、髪や頭皮の本当の悩みに向き合う完全予約制のヘアサロン。カット・カラー・縮毛矯正・髪質改善トリートメントに対応。";
+  "地域に根を張り、未来を育てる。髪の悩みに本気で向き合い、一生涯寄り添う完全予約制のヘアサロン。カット・カラー・縮毛矯正・髪質改善トリートメントに対応。";
 
 export const metadata: Metadata = {
   title: {
