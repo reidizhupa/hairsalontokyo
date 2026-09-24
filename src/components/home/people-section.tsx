@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { ArrowUpRightIcon, InstagramLogoIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+    ArrowUpRightIcon,
+    InstagramLogoIcon,
+} from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "../reveal";
 import { ParallaxImage } from "./parallax-image";
 import type { StaffMember } from "@/lib/types";
@@ -32,7 +35,7 @@ export function PeopleSection({
 }: PeopleSectionProps) {
     return (
         <section id="people" className={className}>
-            <div className="mx-auto max-w-7xl px-4 py-28 sm:px-6 md:py-44 lg:px-10">
+            <div className="mx-auto max-w-7xl px-4 pb-28 sm:px-6 md:pb-44 lg:px-10">
                 <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                     <div>
                         <p className="text-[11px] uppercase tracking-[0.3em] text-foreground-muted">
@@ -85,7 +88,10 @@ export function PeopleSection({
                                         className="flex items-center gap-1 border-b border-ink pb-0.5 text-ink transition-opacity hover:opacity-60"
                                     >
                                         {booking.label}
-                                        <ArrowUpRightIcon size={11} weight="bold" />
+                                        <ArrowUpRightIcon
+                                            size={11}
+                                            weight="bold"
+                                        />
                                     </Link>
                                 ))}
                                 {member.instagram && (
