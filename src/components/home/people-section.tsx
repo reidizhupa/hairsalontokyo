@@ -35,7 +35,7 @@ export function PeopleSection({
 }: PeopleSectionProps) {
     return (
         <section id="people" className={className}>
-            <div className="mx-auto max-w-7xl px-4 pb-28 sm:px-6 md:pb-44 lg:px-10">
+            <div className="mx-auto max-w-7xl px-4 py-28 sm:px-6 md:py-44 lg:px-10">
                 <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                     <div>
                         <p className="text-[11px] uppercase tracking-[0.3em] text-foreground-muted">

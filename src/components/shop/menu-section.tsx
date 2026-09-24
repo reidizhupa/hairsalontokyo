@@ -16,7 +16,7 @@ export function MenuSection({ content, index }: MenuSectionProps) {
 
     return (
         <section id="services" className="bg-background text-ink">
-            <div className="mx-auto max-w-7xl px-4 py-28 sm:px-6 md:pt-44 pb-35 lg:px-10">
+            <div className="mx-auto max-w-7xl px-4 py-28 sm:px-6 md:py-44 lg:px-10">
                 <SectionHeading
                     index={index}
                     label="Menu"
