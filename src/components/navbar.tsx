@@ -50,7 +50,7 @@ export function Navbar({
                     : "bg-transparent border-b border-transparent"
             }`}
         >
-            <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-10">
+            <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-10">
                 <Link href="/" className="flex items-center">
                     <Image
                         src="/logo_full-nav.png"
@@ -58,7 +58,7 @@ export function Navbar({
                         width={570}
                         height={439}
                         priority
-                        className="h-16 w-auto sm:h-14"
+                        className="h-10 w-auto sm:h-14"
                     />
                 </Link>
 
@@ -84,7 +84,11 @@ export function Navbar({
                     <Link
                         href={bookingUrl}
                         target={bookingIsExternal ? "_blank" : undefined}
-                        rel={bookingIsExternal ? "noopener noreferrer" : undefined}
+                        rel={
+                            bookingIsExternal
+                                ? "noopener noreferrer"
+                                : undefined
+                        }
                         className="hidden items-center rounded-sm bg-accent px-4 py-2 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90 sm:px-5 sm:py-2.5 lg:inline-flex"
                     >
                         {bookingLabel}
@@ -122,7 +126,11 @@ export function Navbar({
                     <Link
                         href={bookingUrl}
                         target={bookingIsExternal ? "_blank" : undefined}
-                        rel={bookingIsExternal ? "noopener noreferrer" : undefined}
+                        rel={
+                            bookingIsExternal
+                                ? "noopener noreferrer"
+                                : undefined
+                        }
                         onClick={() => setOpen(false)}
                         className="mt-3 inline-flex w-full items-center justify-center rounded-sm bg-accent px-5 py-2.5 text-sm font-medium text-white transition-transform active:scale-[0.98] hover:opacity-90"
                     >

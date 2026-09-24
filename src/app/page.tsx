@@ -1,38 +1,62 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
-import { About } from "@/components/about";
-import { Stylists } from "@/components/stylists";
 import { Faq } from "@/components/faq";
 import { Recruit } from "@/components/recruit";
-import { LocationOverview } from "@/components/location-overview";
 import { Footer } from "@/components/footer";
-import { BRAND_ABOUT, BRAND_HERO } from "@/lib/brand";
+import { HomeHero } from "@/components/home/home-hero";
+import { BrandMessage } from "@/components/home/brand-message";
+import { Marquee } from "@/components/home/marquee";
+import { StyleSection } from "@/components/home/style-section";
+import { SalonSection } from "@/components/home/salon-section";
+import {
+    PeopleSection,
+    type PersonCard,
+} from "@/components/home/people-section";
+import { EyeSection } from "@/components/home/eye-section";
+import { BookSection } from "@/components/home/book-section";
+import { BookBar } from "@/components/home/book-bar";
+import { BRAND_MESSAGE } from "@/lib/brand";
 import { FAQ, RECRUIT, STAFF } from "@/lib/company";
-import { OVERVIEW_CARDS } from "@/lib/overview";
+import {
+    BOOK_OPTIONS,
+    EYE,
+    SALONS,
+    STYLE_LINKS,
+    STYLE_SHOTS,
+} from "@/lib/home";
 import { ASAKUSA } from "@/lib/locations/asakusa";
 import { SUGAMO } from "@/lib/locations/sugamo";
-import type { StaffMember } from "@/lib/types";
+import { HAIR_INSTAGRAM_URL } from "@/lib/site";
 
 const NAV_LINKS = [
-    { href: "#about", label: "About" },
-    { href: "#shops", label: "Shops" },
-    { href: "#stylists", label: "Staff" },
+    { href: "#style", label: "Style" },
+    { href: "#salon", label: "Salon" },
+    { href: "#people", label: "People" },
+    { href: "#eye", label: "Eye / Brow" },
     { href: "#recruit", label: "Recruit" },
     { href: "#faq", label: "FAQ" },
 ];
 
-function resolveStaffHref(person: StaffMember): string | undefined {
-    const asakusaId = person.profileIdByLocation?.asakusa;
-    if (asakusaId) return `${ASAKUSA.stylistBaseUrl}${asakusaId}/`;
-    const sugamoId = person.profileIdByLocation?.sugamo;
-    if (sugamoId) return `${SUGAMO.stylistBaseUrl}${sugamoId}/`;
-    return undefined;
-}
+const STORES = [
+    { slug: "sugamo", label: "巣鴨で予約", bookingUrl: SUGAMO.bookingUrl },
+    { slug: "asakusa", label: "浅草で予約", bookingUrl: ASAKUSA.bookingUrl },
+] as const;
 
-const STAFF_HREFS_BY_NAME = Object.fromEntries(
-    STAFF.map((person) => [person.name, resolveStaffHref(person)]),
-);
+// Stylist-specific Hot Pepper reservation links, one per salon they're
+// listed at (Hot Pepper issues a separate stylist ID per store).
+const STYLISTS: PersonCard[] = STAFF.filter(
+    (m) => m.src && m.role.includes("スタイリスト"),
+).map((member) => ({
+    member,
+    bookings: STORES.flatMap((store) => {
+        const id = member.profileIdByLocation?.[store.slug];
+        return id
+            ? [{ label: store.label, href: `${store.bookingUrl}&stylistId=${id}` }]
+            : [];
+    }),
+}));
+
+const ASSISTANTS = STAFF.filter((m) => !m.role.includes("スタイリスト"));
 
 const SEO_TITLE = "roots | 浅草・巣鴨の美容室、まつげ・眉サロン";
 const SEO_DESCRIPTION =
@@ -68,32 +92,44 @@ export default function RootPage() {
     return (
         <>
             <Navbar
-                bookingUrl="#shops"
-                bookingLabel="店舗を選ぶ"
+                bookingUrl="#book"
+                bookingLabel="ご予約"
                 links={NAV_LINKS}
                 showLocationSwitcher={false}
             />
             <main className="flex-1">
-                <Hero
-                    content={BRAND_HERO}
-                    bookingUrl="#shops"
-                    bookingLabel="店舗を選ぶ"
-                    secondaryHref="#about"
-                    secondaryLabel="こだわりを見る"
+                <HomeHero />
+                <BrandMessage
+                    lines={BRAND_MESSAGE.lines}
+                    image={BRAND_MESSAGE.image}
                 />
-                <About content={BRAND_ABOUT} />
-                <LocationOverview cards={OVERVIEW_CARDS} />
-                <Stylists staff={STAFF} hrefsByName={STAFF_HREFS_BY_NAME} />
+                <StyleSection
+                    shots={STYLE_SHOTS}
+                    links={STYLE_LINKS}
+                    bookingBySalon={{
+                        SUGAMO: SUGAMO.bookingUrl,
+                        ASAKUSA: ASAKUSA.bookingUrl,
+                    }}
+                />
+                <Marquee
+                    words={["Roots", "Hair", "Sugamo", "Asakusa", "Eye", "Brow", "Tokyo"]}
+                    className="border-y border-line bg-surface py-6 text-6xl text-ink md:py-10 md:text-9xl"
+                />
+                <SalonSection salons={SALONS} />
+                <PeopleSection stylists={STYLISTS} assistants={ASSISTANTS} />
+                <EyeSection eye={EYE} />
                 <Recruit content={RECRUIT} />
-                <Faq items={FAQ} />
+                <Faq items={FAQ} eyebrow="07 — FAQ" />
+                <BookSection options={BOOK_OPTIONS} />
             </main>
             <Footer
                 displayName="roots"
                 footerTagline="美容を通じて、この土地に暮らす人々の毎日に寄り添う。"
-                instagramUrl="https://instagram.com"
+                instagramUrl={HAIR_INSTAGRAM_URL}
                 links={NAV_LINKS}
                 showLocations={false}
             />
+            <BookBar options={BOOK_OPTIONS} />
         </>
     );
 }

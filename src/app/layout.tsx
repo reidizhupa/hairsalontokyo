@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Sans_JP } from "next/font/google";
+import { Cormorant_Garamond, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
 
@@ -9,6 +9,13 @@ const notoSansJP = Noto_Sans_JP({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "roots | 美容室",
@@ -16,16 +23,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#63b8bb",
+  themeColor: "#f1ede7",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ja"
-      className={`${notoSansJP.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
+      className={`${notoSansJP.variable} ${cormorant.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans pb-14 lg:pb-0">
+      <body className="min-h-full flex flex-col overflow-x-clip bg-background text-foreground font-sans pb-14 lg:pb-0">
         {children}
       </body>
     </html>

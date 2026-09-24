@@ -13,7 +13,7 @@ const STORE_ID = "H000811448";
 const BASE_URL = `https://beauty.hotpepper.jp/kr/sln${STORE_ID}`;
 
 export const EYELASH_BOOKING_URL = `https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=${STORE_ID}`;
-export const EYELASH_INSTAGRAM_URL = "https://instagram.com";
+export { EYELASH_INSTAGRAM_URL } from "./site";
 
 export const EYELASH_STRUCTURED_ADDRESS: StructuredAddress = {
     streetAddress: "千石4-26-2 SANSAN千石ビル2F 201号室",

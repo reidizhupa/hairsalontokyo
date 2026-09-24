@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 :root {
-    --background: #fafaf8;
-    --surface: #ffffff;
-    --surface-sunken: #f4f5f5;
-    --foreground: #2e3837;
-    --foreground-muted: #4a4a4a;
-    --accent: #63b8bb;
-    --accent-soft: #eff8f8;
-    --line: #e6ddd0;
+    --background: #f1ede7;
+    --surface: #f8f6f2;
+    --surface-sunken: #e8e2d9;
+    --foreground: #151514;
+    --foreground-muted: #5c5750;
+    --accent: #151514;
+    --accent-soft: #e8e2d9;
+    --line: #d8d0c4;
+    --ink: #151514;
+    --paper: #f1ede7;
 }
 
 @theme inline {
@@ -20,8 +22,23 @@
     --color-accent: var(--accent);
     --color-accent-soft: var(--accent-soft);
     --color-line: var(--line);
+    --color-ink: var(--ink);
+    --color-paper: var(--paper);
     --font-sans: var(--font-noto-sans-jp);
     --font-serif: var(--font-noto-sans-jp);
+    --font-display: var(--font-cormorant), var(--font-noto-sans-jp);
+}
+
+html {
+    /* Keep anchor jumps clear of the sticky navbar. */
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 body {
@@ -30,8 +47,8 @@ body {
 }
 
 ::selection {
-    background: var(--accent);
-    color: #2e3837;
+    background: var(--ink);
+    color: var(--paper);
 }
 
 .no-scrollbar {
@@ -41,4 +58,32 @@ body {
 
 .no-scrollbar::-webkit-scrollbar {
     display: none;
+}
+
+/* Overrides Motion's inline opacity/transform so a Reveal renders static on
+   phones without any JS branching (keeps SSR and hydration identical). */
+@media (max-width: 639px) {
+    .reveal-static-mobile {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+        animation: none;
+    }
 }

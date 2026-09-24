@@ -86,6 +86,7 @@ export default async function LocationPage({
         openingHours: config.structuredAddress.openingHours,
         image: config.hero.imageSrc,
         mapUrl: config.access.mapUrl,
+        instagramUrl: config.instagramUrl,
     });
 
     return (

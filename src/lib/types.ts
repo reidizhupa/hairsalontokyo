@@ -8,11 +8,6 @@ export interface HeroContent {
     imageSrc: string;
     imageAlt: string;
     imageClassName?: string;
-    // Optional transparent cutout layered on top of imageSrc (same canvas/
-    // alignment), for split background+subject photo pairs.
-    foregroundSrc?: string;
-    // Defaults to imageClassName when omitted.
-    foregroundClassName?: string;
     heading: string;
     subheading: string;
 }
@@ -46,6 +41,8 @@ export interface StaffMember {
     src: string | null;
     locations: LocationSlug[];
     profileIdByLocation?: Partial<Record<LocationSlug, string>>;
+    specialty?: string;
+    instagram?: string;
 }
 
 export interface GalleryShot {

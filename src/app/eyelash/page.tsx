@@ -68,6 +68,7 @@ const SCHEMA = localBusinessSchema({
     openingHours: EYELASH_STRUCTURED_ADDRESS.openingHours,
     image: EYELASH_HERO.imageSrc,
     mapUrl: EYELASH_ACCESS.mapUrl,
+    instagramUrl: EYELASH_INSTAGRAM_URL,
 });
 
 export default function EyelashPage() {

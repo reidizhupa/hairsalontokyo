@@ -11,6 +11,7 @@ export const STAFF: StaffMember[] = [
         src: "/staff/yagi-anji.jpg",
         locations: ["asakusa", "sugamo"],
         profileIdByLocation: { asakusa: "T001096667", sugamo: "T000961200" },
+        specialty: "カット・カラー",
     },
     {
         name: "村松 和哉",
@@ -18,6 +19,8 @@ export const STAFF: StaffMember[] = [
         src: "/staff/muramatsu-kazuya.jpg",
         locations: ["asakusa", "sugamo"],
         profileIdByLocation: { asakusa: "T001096668", sugamo: "T000961666" },
+        specialty: "カット・髪質改善",
+        instagram: "kaaaaa0520",
     },
     {
         name: "カワシマ",
@@ -25,6 +28,8 @@ export const STAFF: StaffMember[] = [
         src: "/staff/kawashima-yuuki.jpg",
         locations: ["sugamo"],
         profileIdByLocation: { sugamo: "T000966654" },
+        specialty: "メンズカット・パーマ",
+        instagram: "roots_kawashimayuki",
     },
     {
         name: "澤本 芽衣",
@@ -32,6 +37,7 @@ export const STAFF: StaffMember[] = [
         src: "/staff/sawamoto-mei.jpg",
         locations: ["asakusa", "sugamo"],
         profileIdByLocation: { asakusa: "T001096669", sugamo: "T001009532" },
+        specialty: "韓国スタイル・レイヤーカット",
     },
     {
         name: "TAIKI",

@@ -12,6 +12,7 @@ interface LocalBusinessInput {
     openingHours: string;
     image: string;
     mapUrl?: string;
+    instagramUrl?: string;
 }
 
 export function localBusinessSchema(input: LocalBusinessInput) {
@@ -32,6 +33,7 @@ export function localBusinessSchema(input: LocalBusinessInput) {
         },
         openingHours: input.openingHours,
         ...(input.mapUrl ? { hasMap: input.mapUrl } : {}),
+        ...(input.instagramUrl ? { sameAs: [input.instagramUrl] } : {}),
         parentOrganization: {
             "@type": "Organization",
             name: "roots",

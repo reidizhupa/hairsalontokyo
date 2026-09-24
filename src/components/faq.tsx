@@ -7,24 +7,30 @@ import type { FaqItem } from "@/lib/types";
 
 interface FaqProps {
     items: FaqItem[];
+    eyebrow?: string;
 }
 
-export function Faq({ items }: FaqProps) {
+export function Faq({ items, eyebrow = "FAQ" }: FaqProps) {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
         <section id="faq">
-            <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 md:py-28 lg:px-10">
-                <Reveal className="max-w-xl">
-                    <span className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-accent">
-                        FAQ
-                    </span>
-                    <h2 className="mt-5 font-serif text-base font-thin text-gray-500 leading-snug tracking-tight md:text-3xl">
+            <div className="mx-auto max-w-7xl px-4 py-28 sm:px-6 md:py-44 lg:px-10">
+                <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+                    <div>
+                        <p className="text-[11px] uppercase tracking-[0.3em] text-foreground-muted">
+                            {eyebrow}
+                        </p>
+                        <h2 className="mt-4 font-display text-[22vw] font-light leading-[0.8] tracking-[-0.03em] text-ink md:text-[11rem]">
+                            Q&amp;A
+                        </h2>
+                    </div>
+                    <p className="max-w-xs text-sm leading-relaxed text-foreground-muted md:pb-4">
                         初めての方も、迷っている方も、安心してご相談ください。
-                    </h2>
+                    </p>
                 </Reveal>
 
-                <Reveal className="mt-10 border-t border-line sm:mt-12">
+                <Reveal className="mt-16 border-t border-ink md:mt-24">
                     {items.map((item, i) => {
                         const isOpen = openIndex === i;
                         return (
@@ -37,13 +43,13 @@ export function Faq({ items }: FaqProps) {
                                     aria-expanded={isOpen}
                                     className="flex w-full items-center justify-between gap-4 py-5 text-left sm:py-6"
                                 >
-                                    <span className="font-serif text-base font-medium text-gray-500 sm:text-lg">
+                                    <span className="text-base font-medium text-ink sm:text-lg">
                                         {item.q}
                                     </span>
                                     <CaretDownIcon
                                         size={18}
                                         weight="bold"
-                                        className={`shrink-0 text-accent transition-transform duration-300 ${
+                                        className={`shrink-0 text-ink transition-transform duration-300 ${
                                             isOpen ? "rotate-180" : ""
                                         }`}
                                     />

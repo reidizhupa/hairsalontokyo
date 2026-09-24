@@ -5,6 +5,7 @@ import {
     stylistBaseUrl,
 } from "@/lib/hotpepper";
 import type { LocationConfig } from "@/lib/types";
+import { HAIR_INSTAGRAM_URL } from "@/lib/site";
 
 const STORE_ID = "H000805576";
 
@@ -13,7 +14,7 @@ export const ASAKUSA: LocationConfig = {
     displayName: "roots 浅草店",
     footerTagline: "浅草にある、完全予約制の小さな美容室です。",
     bookingUrl: reserveUrl(STORE_ID),
-    instagramUrl: "https://instagram.com",
+    instagramUrl: HAIR_INSTAGRAM_URL,
     stylistBaseUrl: stylistBaseUrl(STORE_ID),
     seo: {
         siteName: "roots 浅草店",

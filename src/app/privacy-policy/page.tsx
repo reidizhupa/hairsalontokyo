@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { HAIR_INSTAGRAM_URL } from "@/lib/site";
 
 const NAV_LINKS = [
     { href: "/", label: "TOP" },
@@ -140,7 +141,7 @@ export default function PrivacyPolicyPage() {
             <Footer
                 displayName="roots"
                 footerTagline="美容を通じて、この土地に暮らす人々の毎日に寄り添う。"
-                instagramUrl="https://instagram.com"
+                instagramUrl={HAIR_INSTAGRAM_URL}
                 links={NAV_LINKS}
             />
         </>

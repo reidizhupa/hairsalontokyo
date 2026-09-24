@@ -5,6 +5,7 @@ import {
     stylistBaseUrl,
 } from "@/lib/hotpepper";
 import type { LocationConfig } from "@/lib/types";
+import { HAIR_INSTAGRAM_URL } from "@/lib/site";
 
 const STORE_ID = "H000715037";
 
@@ -13,7 +14,7 @@ export const SUGAMO: LocationConfig = {
     displayName: "roots 巣鴨本店",
     footerTagline: "巣鴨・千石エリアにある、rootsの本店です。",
     bookingUrl: reserveUrl(STORE_ID),
-    instagramUrl: "https://instagram.com",
+    instagramUrl: HAIR_INSTAGRAM_URL,
     stylistBaseUrl: stylistBaseUrl(STORE_ID),
     seo: {
         siteName: "roots 巣鴨本店",
