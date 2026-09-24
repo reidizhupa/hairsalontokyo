@@ -17,19 +17,26 @@ export interface PersonCard {
 interface PeopleSectionProps {
     stylists: PersonCard[];
     assistants: StaffMember[];
+    index?: string;
+    className?: string;
 }
 
 // Alternating vertical offsets give the portrait wall an editorial rhythm.
 const OFFSET = ["", "md:mt-32", "md:mt-12", "md:mt-44"];
 
-export function PeopleSection({ stylists, assistants }: PeopleSectionProps) {
+export function PeopleSection({
+    stylists,
+    assistants,
+    index = "04",
+    className = "bg-background",
+}: PeopleSectionProps) {
     return (
-        <section id="people" className="bg-background">
+        <section id="people" className={className}>
             <div className="mx-auto max-w-7xl px-4 py-28 sm:px-6 md:py-44 lg:px-10">
                 <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                     <div>
                         <p className="text-[11px] uppercase tracking-[0.3em] text-foreground-muted">
-                            04 — People
+                            {index} — People
                         </p>
                         <h2 className="mt-4 font-display text-[22vw] font-light leading-[0.8] tracking-[-0.03em] text-ink md:text-[11rem]">
                             People

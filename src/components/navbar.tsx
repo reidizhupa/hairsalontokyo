@@ -11,11 +11,11 @@ import type { NavSlug } from "@/lib/types";
 const DEFAULT_LINKS = [
     { href: "/", label: "TOP" },
     { href: "#services", label: "Menu" },
-    { href: "#stylists", label: "Staff" },
+    { href: "#people", label: "People" },
     { href: "#gallery", label: "Gallery" },
     { href: "#access", label: "Access" },
     { href: "#faq", label: "FAQ" },
-    { href: "#contact", label: "Contact" },
+    { href: "#contact", label: "Book" },
 ];
 
 interface NavbarProps {

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
-import { HeroSplit } from "@/components/hero-split";
-import { Services } from "@/components/services";
-import { Gallery } from "@/components/gallery";
-import { Access } from "@/components/access";
-import { BookingCta } from "@/components/booking-cta";
+import { ShopHero } from "@/components/shop/shop-hero";
+import { MenuSection } from "@/components/shop/menu-section";
+import { GallerySection } from "@/components/shop/gallery-section";
+import { AccessSection } from "@/components/shop/access-section";
+import { ContactSection } from "@/components/shop/contact-section";
 import { Footer } from "@/components/footer";
 import { MobileActionBar } from "@/components/mobile-action-bar";
 import { JsonLd } from "@/components/json-ld";
@@ -26,7 +26,7 @@ const NAV_LINKS = [
     { href: "#services", label: "Menu" },
     { href: "#gallery", label: "Gallery" },
     { href: "#access", label: "Access" },
-    { href: "#contact", label: "Contact" },
+    { href: "#contact", label: "Book" },
 ];
 
 export const metadata: Metadata = {
@@ -81,15 +81,26 @@ export default function EyelashPage() {
                 locationSlug="eyelash"
             />
             <main className="flex-1">
-                <HeroSplit
+                <ShopHero
                     content={EYELASH_HERO}
-                    eyebrow="Eyelash & Brow"
+                    word="Eye / Brow"
+                    kind="Eyelash & Eyebrow"
+                    name="roots 巣鴨店 アイラッシュ&アイブロウ"
                     bookingUrl={EYELASH_BOOKING_URL}
+                    dark
                 />
-                <Services content={EYELASH_MENU} />
-                <Gallery content={EYELASH_GALLERY} />
-                <Access content={EYELASH_ACCESS} />
-                <BookingCta content={EYELASH_CONTACT} />
+                <MenuSection content={EYELASH_MENU} index="01" />
+                <GallerySection content={EYELASH_GALLERY} index="02" />
+                <AccessSection
+                    content={EYELASH_ACCESS}
+                    details={EYELASH_CONTACT.details}
+                    index="03"
+                />
+                <ContactSection
+                    content={EYELASH_CONTACT}
+                    index="04"
+                    name="roots 巣鴨店 アイラッシュ&アイブロウ"
+                />
             </main>
             <Footer
                 displayName="roots 巣鴨店【アイラッシュ&アイブロウ】"

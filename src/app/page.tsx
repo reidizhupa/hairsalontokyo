@@ -8,10 +8,7 @@ import { BrandMessage } from "@/components/home/brand-message";
 import { Marquee } from "@/components/home/marquee";
 import { StyleSection } from "@/components/home/style-section";
 import { SalonSection } from "@/components/home/salon-section";
-import {
-    PeopleSection,
-    type PersonCard,
-} from "@/components/home/people-section";
+import { PeopleSection } from "@/components/home/people-section";
 import { EyeSection } from "@/components/home/eye-section";
 import { BookSection } from "@/components/home/book-section";
 import { BookBar } from "@/components/home/book-bar";
@@ -27,6 +24,7 @@ import {
 import { ASAKUSA } from "@/lib/locations/asakusa";
 import { SUGAMO } from "@/lib/locations/sugamo";
 import { HAIR_INSTAGRAM_URL } from "@/lib/site";
+import { buildPeople } from "@/lib/people";
 
 const NAV_LINKS = [
     { href: "#style", label: "Style" },
@@ -37,26 +35,10 @@ const NAV_LINKS = [
     { href: "#faq", label: "FAQ" },
 ];
 
-const STORES = [
+const { stylists: STYLISTS, assistants: ASSISTANTS } = buildPeople(STAFF, [
     { slug: "sugamo", label: "巣鴨で予約", bookingUrl: SUGAMO.bookingUrl },
     { slug: "asakusa", label: "浅草で予約", bookingUrl: ASAKUSA.bookingUrl },
-] as const;
-
-// Stylist-specific Hot Pepper reservation links, one per salon they're
-// listed at (Hot Pepper issues a separate stylist ID per store).
-const STYLISTS: PersonCard[] = STAFF.filter(
-    (m) => m.src && m.role.includes("スタイリスト"),
-).map((member) => ({
-    member,
-    bookings: STORES.flatMap((store) => {
-        const id = member.profileIdByLocation?.[store.slug];
-        return id
-            ? [{ label: store.label, href: `${store.bookingUrl}&stylistId=${id}` }]
-            : [];
-    }),
-}));
-
-const ASSISTANTS = STAFF.filter((m) => !m.role.includes("スタイリスト"));
+]);
 
 const SEO_TITLE = "roots | 浅草・巣鴨の美容室、まつげ・眉サロン";
 const SEO_DESCRIPTION =

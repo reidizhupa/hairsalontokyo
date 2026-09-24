@@ -6,7 +6,7 @@ import type { NavSlug } from "@/lib/types";
 const LINKS = [
     { href: "/", label: "TOP" },
     { href: "#services", label: "Menu" },
-    { href: "#stylists", label: "Staff" },
+    { href: "#people", label: "People" },
     { href: "#gallery", label: "Gallery" },
     { href: "#access", label: "Access" },
     { href: "#faq", label: "FAQ" },

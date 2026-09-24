@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
-import { HeroSplit } from "@/components/hero-split";
-import { Services } from "@/components/services";
-import { Stylists } from "@/components/stylists";
-import { Gallery } from "@/components/gallery";
-import { Access } from "@/components/access";
+import { ShopHero } from "@/components/shop/shop-hero";
+import { MenuSection } from "@/components/shop/menu-section";
+import { GallerySection } from "@/components/shop/gallery-section";
+import { AccessSection } from "@/components/shop/access-section";
+import { ContactSection } from "@/components/shop/contact-section";
+import { PeopleSection } from "@/components/home/people-section";
 import { Faq } from "@/components/faq";
-import { BookingCta } from "@/components/booking-cta";
 import { Footer } from "@/components/footer";
 import { MobileActionBar } from "@/components/mobile-action-bar";
 import { JsonLd } from "@/components/json-ld";
@@ -15,6 +15,7 @@ import { ASAKUSA } from "@/lib/locations/asakusa";
 import { SUGAMO } from "@/lib/locations/sugamo";
 import { FAQ, STAFF } from "@/lib/company";
 import { localBusinessSchema } from "@/lib/structured-data";
+import { buildPeople } from "@/lib/people";
 import type { LocationConfig, LocationSlug } from "@/lib/types";
 
 const LOCATION_CONFIGS: Record<string, LocationConfig> = {
@@ -74,6 +75,10 @@ export default async function LocationPage({
 
     const slug = config.slug as LocationSlug;
     const staff = STAFF.filter((member) => member.locations.includes(slug));
+    const { stylists, assistants } = buildPeople(staff, [
+        { slug, label: "ご予約", bookingUrl: config.bookingUrl },
+    ]);
+    const word = slug === "sugamo" ? "Sugamo" : "Asakusa";
     const schema = localBusinessSchema({
         type: "HairSalon",
         name: config.displayName,
@@ -94,21 +99,31 @@ export default async function LocationPage({
             <JsonLd data={schema} />
             <Navbar bookingUrl={config.bookingUrl} locationSlug={slug} />
             <main className="flex-1">
-                <HeroSplit
+                <ShopHero
                     content={config.hero}
-                    eyebrow={slug === "sugamo" ? "Sugamo" : "Asakusa"}
+                    word={word}
+                    kind="Hair Salon"
+                    name={config.displayName}
                     bookingUrl={config.bookingUrl}
                 />
-                <Services content={config.menu} />
-                <Stylists
-                    staff={staff}
-                    stylistBaseUrl={config.stylistBaseUrl}
-                    locationSlug={slug}
+                <MenuSection content={config.menu} index="01" />
+                <PeopleSection
+                    stylists={stylists}
+                    assistants={assistants}
+                    index="02"
                 />
-                <Gallery content={config.gallery} />
-                <Access content={config.access} />
-                <Faq items={FAQ} />
-                <BookingCta content={config.contact} />
+                <GallerySection content={config.gallery} index="03" />
+                <AccessSection
+                    content={config.access}
+                    details={config.contact.details}
+                    index="04"
+                />
+                <Faq items={FAQ} eyebrow="05 — FAQ" />
+                <ContactSection
+                    content={config.contact}
+                    index="06"
+                    name={config.displayName}
+                />
             </main>
             <Footer
                 displayName={config.displayName}
