@@ -5,4 +5,4 @@ export const SITE_URL = "https://roots-hairsalon.jp";
 
 export const HAIR_INSTAGRAM_URL = "https://www.instagram.com/roots_hair0808/";
 export const EYELASH_INSTAGRAM_URL =
-    "https://www.instagram.com/roots_eyelashes_/";
+    "https://www.instagram.com/roots_eyelash_/";
