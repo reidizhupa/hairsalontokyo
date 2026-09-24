@@ -111,6 +111,7 @@ export default async function LocationPage({
                     stylists={stylists}
                     assistants={assistants}
                     index="02"
+                    spacing="pb-28 pt-12 md:pb-44 md:pt-16"
                 />
                 <GallerySection content={config.gallery} index="03" />
                 <AccessSection
@@ -118,7 +119,11 @@ export default async function LocationPage({
                     details={config.contact.details}
                     index="04"
                 />
-                <Faq items={FAQ} eyebrow="05 — FAQ" />
+                <Faq
+                    items={FAQ}
+                    eyebrow="05 — FAQ"
+                    spacing="pb-28 pt-12 md:pb-44 md:pt-16"
+                />
                 <ContactSection
                     content={config.contact}
                     index="06"

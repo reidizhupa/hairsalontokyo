@@ -22,7 +22,7 @@ export function AccessSection({ content, details, index }: AccessSectionProps) {
 
     return (
         <section id="access" className="bg-background text-ink">
-            <div className="mx-auto max-w-7xl px-4 py-28 sm:px-6 md:py-44 lg:px-10">
+            <div className="mx-auto max-w-7xl px-4 pb-16 pt-28 sm:px-6 md:pb-24 md:pt-44 lg:px-10">
                 <SectionHeading
                     index={index}
                     label="Access"
