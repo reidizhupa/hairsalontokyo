@@ -105,7 +105,11 @@ export default function RootPage() {
                 <PeopleSection stylists={STYLISTS} assistants={ASSISTANTS} />
                 <EyeSection eye={EYE} />
                 <Recruit content={RECRUIT} />
-                <Faq items={FAQ} eyebrow="07 — FAQ" />
+                <Faq
+                    items={FAQ}
+                    eyebrow="07 — FAQ"
+                    spacing="pb-12 pt-28 md:pb-16 md:pt-44"
+                />
                 <BookSection options={BOOK_OPTIONS} />
             </main>
             <Footer
