@@ -7,6 +7,8 @@ interface SectionHeadingProps {
     title: ReactNode;
     aside?: ReactNode;
     dark?: boolean;
+    // Put the note under the title (as on Style) instead of bottom-right.
+    stacked?: boolean;
 }
 
 // Shared editorial header: small numbered eyebrow, oversized display word,
@@ -17,9 +19,16 @@ export function SectionHeading({
     title,
     aside,
     dark = false,
+    stacked = false,
 }: SectionHeadingProps) {
     return (
-        <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <Reveal
+            className={`flex flex-col gap-6 ${
+                stacked
+                    ? "md:gap-14"
+                    : "md:flex-row md:items-end md:justify-between"
+            }`}
+        >
             <div>
                 <p
                     className={`text-[11px] uppercase tracking-[0.3em] ${
@@ -34,7 +43,9 @@ export function SectionHeading({
             </div>
             {aside && (
                 <p
-                    className={`max-w-xs text-sm leading-relaxed md:pb-4 ${
+                    className={`text-sm leading-relaxed ${
+                        stacked ? "max-w-sm" : "max-w-xs md:pb-4"
+                    } ${
                         dark ? "text-paper/70" : "text-foreground-muted"
                     }`}
                 >

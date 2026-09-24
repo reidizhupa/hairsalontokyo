@@ -11,7 +11,7 @@ export function BookSection({ options }: BookSectionProps) {
     return (
         <section id="book" className="bg-background">
             <div className="mx-auto max-w-7xl px-4 py-28 sm:px-6 md:py-44 lg:px-10">
-                <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+                <Reveal className="flex flex-col gap-6 md:gap-14">
                     <div>
                         <p className="text-[11px] uppercase tracking-[0.3em] text-foreground-muted">
                             08 — Reservation
@@ -20,7 +20,7 @@ export function BookSection({ options }: BookSectionProps) {
                             Book
                         </h2>
                     </div>
-                    <p className="max-w-xs text-sm leading-relaxed text-foreground-muted md:pb-6">
+                    <p className="max-w-sm text-sm leading-relaxed text-foreground-muted">
                         完全予約制です。ご希望の店舗を選ぶと、HOT PEPPER
                         Beautyの予約ページへ移動します。
                     </p>

@@ -21,6 +21,7 @@ export function ContactSection({ content, index, name }: ContactSectionProps) {
                     label="Reservation"
                     title="Book"
                     aside={content.heading}
+                    stacked
                 />
 
                 <Reveal className="mt-16 md:mt-24">

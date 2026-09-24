@@ -40,7 +40,7 @@ export function PeopleSection({
     return (
         <section id="people" className={className}>
             <div className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 ${spacing}`}>
-                <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+                <Reveal className="flex flex-col gap-6 md:gap-14">
                     <div>
                         <p className="text-[11px] uppercase tracking-[0.3em] text-foreground-muted">
                             {index} — People
@@ -49,7 +49,7 @@ export function PeopleSection({
                             People
                         </h2>
                     </div>
-                    <p className="max-w-xs text-sm leading-relaxed text-foreground-muted md:pb-4">
+                    <p className="max-w-sm text-sm leading-relaxed text-foreground-muted">
                         担当制で、はじめから最後まで同じスタイリストが向き合います。
                     </p>
                 </Reveal>

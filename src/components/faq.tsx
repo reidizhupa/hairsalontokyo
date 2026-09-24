@@ -23,7 +23,7 @@ export function Faq({
     return (
         <section id="faq">
             <div className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 ${spacing}`}>
-                <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+                <Reveal className="flex flex-col gap-6 md:gap-14">
                     <div>
                         <p className="text-[11px] uppercase tracking-[0.3em] text-foreground-muted">
                             {eyebrow}
@@ -32,7 +32,7 @@ export function Faq({
                             Q&amp;A
                         </h2>
                     </div>
-                    <p className="max-w-xs text-sm leading-relaxed text-foreground-muted md:pb-4">
+                    <p className="max-w-sm text-sm leading-relaxed text-foreground-muted">
                         初めての方も、迷っている方も、安心してご相談ください。
                     </p>
                 </Reveal>
