@@ -33,16 +33,24 @@ export function ShopHero({
                     }`}
                 >
                     <span>roots — {kind}</span>
-                    <span className="hidden normal-case tracking-normal sm:inline">
-                        {name}
-                    </span>
                 </div>
 
                 {/* Compact two-column hero: name + copy left, photo right. */}
                 <div className="mt-6 grid grid-cols-1 gap-8 md:mt-8 md:grid-cols-12 md:items-center md:gap-8">
                     <Reveal className="md:col-span-7">
-                        <h1 className="font-display text-6xl font-light leading-[0.9] tracking-[-0.02em] md:text-7xl lg:text-8xl">
+                        <p
+                            aria-hidden
+                            className="font-display text-6xl font-light leading-[0.9] tracking-[-0.02em] md:text-7xl lg:text-8xl"
+                        >
                             {word}
+                        </p>
+                        {/* Real heading: location + service + shop name. */}
+                        <h1
+                            className={`mt-4 text-sm tracking-[0.1em] ${
+                                dark ? "text-paper/70" : "text-foreground-muted"
+                            }`}
+                        >
+                            {name}
                         </h1>
                     </Reveal>
 

@@ -20,6 +20,7 @@ export function ContactSection({ content, index, name }: ContactSectionProps) {
                     index={index}
                     label="Reservation"
                     title="Book"
+                    jp="ご予約"
                     aside={content.heading}
                     stacked
                 />

@@ -5,6 +5,9 @@ interface SectionHeadingProps {
     index: string;
     label: string;
     title: ReactNode;
+    // Japanese equivalent of the display title, read by search engines and
+    // screen readers but not shown.
+    jp?: string;
     aside?: ReactNode;
     dark?: boolean;
     // Put the note under the title (as on Style) instead of bottom-right.
@@ -17,6 +20,7 @@ export function SectionHeading({
     index,
     label,
     title,
+    jp,
     aside,
     dark = false,
     stacked = false,
@@ -39,6 +43,7 @@ export function SectionHeading({
                 </p>
                 <h2 className="mt-4 font-display text-[22vw] font-light leading-[0.8] tracking-[-0.03em] md:text-[11rem]">
                     {title}
+                    {jp && <span className="sr-only">｜{jp}</span>}
                 </h2>
             </div>
             {aside && (

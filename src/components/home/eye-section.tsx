@@ -20,6 +20,7 @@ export function EyeSection({ eye }: EyeSectionProps) {
                         Eye
                         <span className="italic text-paper/50"> / </span>
                         Brow
+                        <span className="sr-only">｜まつげ・眉サロン</span>
                     </h2>
                 </Reveal>
 

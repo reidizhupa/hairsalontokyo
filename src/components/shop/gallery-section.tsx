@@ -18,9 +18,14 @@ import type { GalleryContent } from "@/lib/types";
 interface GallerySectionProps {
     content: GalleryContent;
     index: string;
+    jp?: string;
 }
 
-export function GallerySection({ content, index }: GallerySectionProps) {
+export function GallerySection({
+    content,
+    index,
+    jp = "ヘアスタイル",
+}: GallerySectionProps) {
     const { shots } = content;
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -55,6 +60,7 @@ export function GallerySection({ content, index }: GallerySectionProps) {
                     index={index}
                     label="Gallery"
                     title="Gallery"
+                    jp={jp}
                     aside={content.heading}
                 />
 

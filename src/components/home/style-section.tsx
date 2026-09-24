@@ -36,6 +36,7 @@ export function StyleSection({
                         </p>
                         <h2 className="mt-4 font-display text-[22vw] font-light leading-[0.8] tracking-[-0.03em] text-ink md:text-[11rem]">
                             Style
+                            <span className="sr-only">｜ヘアスタイル</span>
                         </h2>
                     </div>
                     <p className="max-w-sm text-sm leading-relaxed text-foreground-muted">

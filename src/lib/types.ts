@@ -118,6 +118,8 @@ export interface FaqItem {
 
 export interface SeoMeta {
     siteName: string;
+    // Visible page <h1>: location + service + shop name.
+    h1: string;
     title: string;
     description: string;
     keywords: string[];

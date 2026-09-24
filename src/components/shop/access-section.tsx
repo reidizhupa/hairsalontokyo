@@ -27,6 +27,7 @@ export function AccessSection({ content, details, index }: AccessSectionProps) {
                     index={index}
                     label="Access"
                     title="Access"
+                    jp="アクセス・店舗情報"
                     aside={content.heading}
                 />
 

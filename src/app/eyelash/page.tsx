@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     title: EYELASH_SEO.title,
     description: EYELASH_SEO.description,
     keywords: EYELASH_SEO.keywords,
+    alternates: { canonical: "/eyelash" },
     openGraph: {
         title: EYELASH_SEO.title,
         description: EYELASH_SEO.description,
@@ -85,12 +86,16 @@ export default function EyelashPage() {
                     content={EYELASH_HERO}
                     word="Eye / Brow"
                     kind="Eyelash & Eyebrow"
-                    name="roots 巣鴨店 アイラッシュ&アイブロウ"
+                    name={EYELASH_SEO.h1}
                     bookingUrl={EYELASH_BOOKING_URL}
                     dark
                 />
                 <MenuSection content={EYELASH_MENU} index="01" />
-                <GallerySection content={EYELASH_GALLERY} index="02" />
+                <GallerySection
+                    content={EYELASH_GALLERY}
+                    index="02"
+                    jp="まつげ・眉の仕上がり"
+                />
                 <AccessSection
                     content={EYELASH_ACCESS}
                     details={EYELASH_CONTACT.details}

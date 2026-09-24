@@ -25,6 +25,8 @@ import { ASAKUSA } from "@/lib/locations/asakusa";
 import { SUGAMO } from "@/lib/locations/sugamo";
 import { HAIR_INSTAGRAM_URL } from "@/lib/site";
 import { buildPeople } from "@/lib/people";
+import { organizationSchema } from "@/lib/structured-data";
+import { JsonLd } from "@/components/json-ld";
 
 const NAV_LINKS = [
     { href: "#style", label: "Style" },
@@ -47,6 +49,7 @@ const SEO_DESCRIPTION =
 export const metadata: Metadata = {
     title: SEO_TITLE,
     description: SEO_DESCRIPTION,
+    alternates: { canonical: "/" },
     openGraph: {
         title: SEO_TITLE,
         description: SEO_DESCRIPTION,
@@ -73,6 +76,7 @@ export const metadata: Metadata = {
 export default function RootPage() {
     return (
         <>
+            <JsonLd data={organizationSchema()} />
             <Navbar
                 bookingUrl="#book"
                 bookingLabel="ご予約"

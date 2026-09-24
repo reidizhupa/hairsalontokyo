@@ -18,6 +18,7 @@ export const ASAKUSA: LocationConfig = {
     stylistBaseUrl: stylistBaseUrl(STORE_ID),
     seo: {
         siteName: "roots 浅草店",
+        h1: "浅草・入谷の美容室　roots 浅草店",
         title: "roots 浅草店 | 浅草の完全予約制ヘアサロン",
         description:
             "地域に根を張り、未来を育てる。髪の悩みに本気で向き合い、一生涯寄り添う完全予約制のヘアサロン。カット・カラー・縮毛矯正・髪質改善トリートメントに対応。",

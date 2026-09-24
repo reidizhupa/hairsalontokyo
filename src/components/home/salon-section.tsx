@@ -18,6 +18,7 @@ export function SalonSection({ salons }: SalonSectionProps) {
                     </p>
                     <h2 className="mt-4 font-display text-[22vw] font-light leading-[0.8] tracking-[-0.03em] text-ink md:text-[11rem]">
                         Salon
+                            <span className="sr-only">｜店舗一覧</span>
                     </h2>
                 </Reveal>
 

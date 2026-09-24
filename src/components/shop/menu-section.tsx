@@ -21,6 +21,7 @@ export function MenuSection({ content, index }: MenuSectionProps) {
                     index={index}
                     label="Menu"
                     title="Menu"
+                    jp="メニュー・料金"
                     aside={content.heading}
                 />
 

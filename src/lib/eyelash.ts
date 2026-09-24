@@ -26,6 +26,7 @@ export const EYELASH_STRUCTURED_ADDRESS: StructuredAddress = {
 
 export const EYELASH_SEO: SeoMeta = {
     siteName: "roots 巣鴨店【アイラッシュ&アイブロウ】",
+        h1: "巣鴨のまつげ・眉サロン　roots 巣鴨店 アイラッシュ&アイブロウ",
     title: "roots 巣鴨店 アイラッシュ&アイブロウ | 巣鴨の完全予約制まつげ・眉サロン",
     description:
         "白とリネン、グリーンに包まれる完全予約制のまつげ・眉サロン roots 巣鴨店。まつげパーマ・パリジェンヌリフト・まつげエクステ・アイブロウwaxに対応。",

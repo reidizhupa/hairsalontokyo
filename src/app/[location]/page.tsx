@@ -42,6 +42,7 @@ export async function generateMetadata({
         title: config.seo.title,
         description: config.seo.description,
         keywords: config.seo.keywords,
+        alternates: { canonical: `/${config.slug}` },
         openGraph: {
             title: config.seo.title,
             description: config.seo.description,
@@ -103,7 +104,7 @@ export default async function LocationPage({
                     content={config.hero}
                     word={word}
                     kind="Hair Salon"
-                    name={config.displayName}
+                    name={config.seo.h1}
                     bookingUrl={config.bookingUrl}
                 />
                 <MenuSection content={config.menu} index="01" />

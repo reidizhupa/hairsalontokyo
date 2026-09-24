@@ -19,6 +19,7 @@ const SEO_DESCRIPTION =
 export const metadata: Metadata = {
     title: SEO_TITLE,
     description: SEO_DESCRIPTION,
+    alternates: { canonical: "/recruit" },
     openGraph: {
         title: SEO_TITLE,
         description: SEO_DESCRIPTION,

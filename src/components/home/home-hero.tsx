@@ -22,14 +22,19 @@ export function HomeHero() {
             id="top"
             className="relative h-[calc(100svh-4rem)] min-h-130 overflow-hidden bg-surface-sunken"
         >
-            <motion.p
+            {/* The page's real heading: visible, Japanese, keyword-bearing.
+                The giant ROOTS below is decorative. */}
+            <motion.h1
                 style={reduce ? undefined : { opacity: fade }}
-                className="absolute left-4 top-8 z-20 text-[11px] uppercase leading-relaxed tracking-[0.3em] text-foreground sm:left-6 lg:left-10 lg:top-12"
+                className="absolute left-4 top-8 z-20 text-[11px] leading-relaxed text-foreground sm:left-6 lg:left-10 lg:top-12"
             >
-                Hair &amp; Eye Salon
-                <br />
-                Sugamo / Asakusa — Tokyo
-            </motion.p>
+                <span className="block tracking-[0.15em]">
+                    浅草・巣鴨の美容室／まつげ・眉サロン
+                </span>
+                <span className="block uppercase tracking-[0.3em]">
+                    roots — Hair &amp; Eye Salon Tokyo
+                </span>
+            </motion.h1>
 
             <motion.p
                 style={reduce ? undefined : { opacity: fade }}
@@ -56,12 +61,13 @@ export function HomeHero() {
 
             {/* Wordmark sits in front, overlapping only the dress — never the
                 face — so it layers like a cover but always stays legible. */}
-            <motion.h1
+            <motion.p
+                aria-hidden
                 style={reduce ? undefined : { y: yWord }}
                 className="absolute inset-x-0 bottom-[12%] z-20 select-none text-center font-display text-[33vw] font-light leading-[0.78] tracking-[-0.04em] text-ink sm:bottom-[7%] sm:text-[26vw]"
             >
                 ROOTS
-            </motion.h1>
+            </motion.p>
 
             <div className="absolute inset-x-0 bottom-0 z-20 flex items-end justify-between px-4 pb-5 sm:px-6 lg:px-10">
                 <p className="font-display text-base italic text-foreground sm:hidden">

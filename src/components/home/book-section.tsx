@@ -18,6 +18,7 @@ export function BookSection({ options }: BookSectionProps) {
                         </p>
                         <h2 className="mt-4 font-display text-[26vw] font-light leading-[0.8] tracking-[-0.03em] text-ink md:text-[13rem]">
                             Book
+                            <span className="sr-only">｜ご予約</span>
                         </h2>
                     </div>
                     <p className="max-w-sm text-sm leading-relaxed text-foreground-muted">

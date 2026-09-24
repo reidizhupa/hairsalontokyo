@@ -20,6 +20,7 @@ export function Recruit({ content }: RecruitProps) {
                         Join
                         <br />
                         <span className="italic">us.</span>
+                        <span className="sr-only">｜採用情報</span>
                     </h2>
                     <p className="mt-10 text-xl font-light leading-relaxed text-ink sm:text-2xl">
                         {content.heading.join("")}
