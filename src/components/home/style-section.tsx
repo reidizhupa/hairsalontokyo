@@ -61,7 +61,7 @@ export function StyleSection({
                                 className={`group ${MOBILE_FRAMES[i % MOBILE_FRAMES.length]} md:aspect-3/4`}
                                 strength={STRENGTH[i % STRENGTH.length]}
                             />
-                            <div className="mt-3 flex items-center justify-between text-[11px] uppercase tracking-[0.25em] text-foreground-muted">
+                            <div className="mt-3 flex items-start justify-between gap-2 text-[11px] uppercase tracking-[0.25em] text-foreground-muted">
                                 <span>
                                     No.{String(i + 1).padStart(2, "0")} —{" "}
                                     {shot.salon}
@@ -70,7 +70,7 @@ export function StyleSection({
                                     href={bookingBySalon[shot.salon]}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-1 text-ink transition-opacity hover:opacity-60"
+                                    className="flex shrink-0 items-center gap-1 whitespace-nowrap tracking-[0.1em] text-ink transition-opacity hover:opacity-60"
                                 >
                                     ご予約
                                     <ArrowUpRightIcon size={11} weight="bold" />

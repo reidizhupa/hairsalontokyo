@@ -19,7 +19,7 @@ export function BrandMessage({ lines, image }: BrandMessageProps) {
                         Ethos
                     </p>
 
-                    <h2 className="mt-14 text-2xl font-light leading-[1.9] tracking-wide text-ink sm:text-3xl md:mt-20 md:text-[1.45rem] md:leading-[1.9] lg:text-[1.6rem] xl:text-[2.1rem]">
+                    <h2 className="mt-14 text-[1.2rem] font-light leading-[1.9] tracking-wide text-ink sm:text-3xl md:mt-20 md:text-[1.45rem] md:leading-[1.9] lg:text-[1.6rem] xl:text-[2.1rem]">
                         {lines.map((line, i) => (
                             <span
                                 key={line}
