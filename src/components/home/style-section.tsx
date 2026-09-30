@@ -3,6 +3,7 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "../reveal";
 import { ParallaxImage } from "./parallax-image";
 import type { StyleShot } from "@/lib/home";
+import { MaskedText } from "../masked-text";
 
 interface StyleSectionProps {
     shots: StyleShot[];
@@ -35,7 +36,7 @@ export function StyleSection({
                             02 — Style
                         </p>
                         <h2 className="mt-4 font-display text-[22vw] font-light leading-[0.8] tracking-[-0.03em] text-ink md:text-[11rem]">
-                            Style
+                            <MaskedText text="Style" />
                             <span className="sr-only">｜ヘアスタイル</span>
                         </h2>
                     </div>

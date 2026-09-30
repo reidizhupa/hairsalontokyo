@@ -1,5 +1,6 @@
 import { Reveal } from "../reveal";
 import { ParallaxImage } from "./parallax-image";
+import { MaskedText } from "../masked-text";
 
 interface BrandMessageProps {
     lines: string[];
@@ -16,7 +17,7 @@ export function BrandMessage({ lines, image }: BrandMessageProps) {
                     </p>
                     {/* Single word, same treatment as Style / Salon / People. */}
                     <p className="mt-4 font-display text-[22vw] font-light leading-[0.8] tracking-[-0.03em] text-ink md:text-[8rem] lg:text-[11rem]">
-                        Ethos
+                        <MaskedText text="Ethos" />
                     </p>
 
                     <h2 className="mt-14 text-[1.2rem] font-light leading-[1.9] tracking-wide text-ink sm:text-3xl md:mt-20 md:text-[1.45rem] md:leading-[1.9] lg:text-[1.6rem] xl:text-[2.1rem]">

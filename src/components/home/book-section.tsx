@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "../reveal";
 import type { BOOK_OPTIONS } from "@/lib/home";
+import { MaskedText } from "../masked-text";
 
 interface BookSectionProps {
     options: typeof BOOK_OPTIONS;
@@ -17,7 +18,7 @@ export function BookSection({ options }: BookSectionProps) {
                             08 — Reservation
                         </p>
                         <h2 className="mt-4 font-display text-[26vw] font-light leading-[0.8] tracking-[-0.03em] text-ink md:text-[13rem]">
-                            Book
+                            <MaskedText text="Book" />
                             <span className="sr-only">｜ご予約</span>
                         </h2>
                     </div>

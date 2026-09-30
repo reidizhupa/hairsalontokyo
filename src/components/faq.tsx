@@ -4,6 +4,7 @@ import { useState } from "react";
 import { CaretDownIcon } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./reveal";
 import type { FaqItem } from "@/lib/types";
+import { MaskedText } from "./masked-text";
 
 interface FaqProps {
     items: FaqItem[];
@@ -29,7 +30,7 @@ export function Faq({
                             {eyebrow}
                         </p>
                         <h2 className="mt-4 font-display text-[22vw] font-light leading-[0.8] tracking-[-0.03em] text-ink md:text-[11rem]">
-                            Q&amp;A
+                            <MaskedText text="Q&A" />
                             <span className="sr-only">｜よくある質問</span>
                         </h2>
                     </div>

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Reveal } from "../reveal";
+import { MaskedText } from "../masked-text";
 
 interface SectionHeadingProps {
     index: string;
@@ -42,7 +43,11 @@ export function SectionHeading({
                     {index} — {label}
                 </p>
                 <h2 className="mt-4 font-display text-[22vw] font-light leading-[0.8] tracking-[-0.03em] md:text-[11rem]">
-                    {title}
+                    {typeof title === "string" ? (
+                        <MaskedText text={title} />
+                    ) : (
+                        title
+                    )}
                     {jp && <span className="sr-only">｜{jp}</span>}
                 </h2>
             </div>

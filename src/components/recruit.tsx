@@ -3,6 +3,7 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./reveal";
 import { ParallaxImage } from "./home/parallax-image";
 import type { RecruitContent } from "@/lib/types";
+import { MaskedText } from "./masked-text";
 
 interface RecruitProps {
     content: RecruitContent;
@@ -17,9 +18,11 @@ export function Recruit({ content }: RecruitProps) {
                         06 — Recruit
                     </p>
                     <h2 className="mt-4 font-display text-[20vw] font-light leading-[0.8] tracking-[-0.03em] text-ink md:text-[9rem]">
-                        Join
+                        <MaskedText text="Join" />
                         <br />
-                        <span className="italic">us.</span>
+                        <span className="italic">
+                            <MaskedText text="us." delay={0.1} />
+                        </span>
                         <span className="sr-only">｜採用情報</span>
                     </h2>
                     <p className="mt-10 text-xl font-light leading-relaxed text-ink sm:text-2xl">

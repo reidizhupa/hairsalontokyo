@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
+import { DURATION, EASE_OUT, VIEWPORT } from "@/lib/motion";
 
 export function Reveal({
   children,
@@ -20,10 +21,14 @@ export function Reveal({
   return (
     <motion.div
       className={`${className}${mobileStatic ? " reveal-static-mobile" : ""}`}
-      initial={reduce ? false : { opacity: 0, y: 28 }}
+      // Same markup on server and client (`reduce` is null during SSR);
+      // reduced motion just makes the entrance instant.
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      viewport={VIEWPORT}
+      transition={
+        reduce ? { duration: 0 } : { duration: DURATION.reveal, delay, ease: EASE_OUT }
+      }
     >
       {children}
     </motion.div>

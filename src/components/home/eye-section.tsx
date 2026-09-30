@@ -3,6 +3,7 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "../reveal";
 import { ParallaxImage } from "./parallax-image";
 import type { EYE } from "@/lib/home";
+import { MaskedText } from "../masked-text";
 
 interface EyeSectionProps {
     eye: typeof EYE;
@@ -17,9 +18,11 @@ export function EyeSection({ eye }: EyeSectionProps) {
                         05 — Eyelash &amp; Eyebrow
                     </p>
                     <h2 className="mt-4 font-display text-[24vw] font-light leading-[0.8] tracking-[-0.03em] md:text-[13rem]">
-                        Eye
-                        <span className="italic text-paper/50"> / </span>
-                        Brow
+                        <MaskedText text="Eye" />{" "}
+                        <span className="italic text-paper/50">
+                            <MaskedText text="/" delay={0.05} />
+                        </span>{" "}
+                        <MaskedText text="Brow" delay={0.1} />
                         <span className="sr-only">｜まつげ・眉サロン</span>
                     </h2>
                 </Reveal>

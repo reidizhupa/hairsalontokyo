@@ -6,6 +6,7 @@ import {
 import { Reveal } from "../reveal";
 import { ParallaxImage } from "./parallax-image";
 import type { StaffMember } from "@/lib/types";
+import { MaskedText } from "../masked-text";
 
 export interface PersonBooking {
     label: string;
@@ -46,7 +47,7 @@ export function PeopleSection({
                             {index} — People
                         </p>
                         <h2 className="mt-4 font-display text-[22vw] font-light leading-[0.8] tracking-[-0.03em] text-ink md:text-[11rem]">
-                            People
+                            <MaskedText text="People" />
                             <span className="sr-only">｜スタイリスト紹介</span>
                         </h2>
                     </div>

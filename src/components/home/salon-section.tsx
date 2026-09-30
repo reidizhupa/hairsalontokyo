@@ -3,6 +3,7 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "../reveal";
 import { ParallaxImage } from "./parallax-image";
 import type { SalonFeature } from "@/lib/home";
+import { MaskedText } from "../masked-text";
 
 interface SalonSectionProps {
     salons: SalonFeature[];
@@ -17,7 +18,7 @@ export function SalonSection({ salons }: SalonSectionProps) {
                         03 — Salon
                     </p>
                     <h2 className="mt-4 font-display text-[22vw] font-light leading-[0.8] tracking-[-0.03em] text-ink md:text-[11rem]">
-                        Salon
+                        <MaskedText text="Salon" />
                             <span className="sr-only">｜店舗一覧</span>
                     </h2>
                 </Reveal>
