@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
+import { SmoothScroll } from "@/components/smooth-scroll";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -34,7 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${notoSansJP.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col overflow-x-clip bg-background text-foreground font-sans pb-14 lg:pb-0">
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );
